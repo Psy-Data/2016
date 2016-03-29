@@ -1,0 +1,2733 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PsyLife-data team">
+
+    <title>Data</title>
+
+    <link rel="canonical" href="/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="css/syntax.css">
+
+    <!-- Custom Fonts -->
+<!-- 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'> -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	 <style>
+    @media only screen and (min-width: 641px) {
+      .am-offcanvas {
+        display: block;
+        position: static;
+        background: none;
+      }
+
+      .am-offcanvas-bar {
+        position: static;
+        width: auto;
+        background: none;
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      .am-offcanvas-bar:after {
+        content: none;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .am-offcanvas-bar .am-nav>li>a {
+        color:#ccc;
+        border-radius: 0;
+        border-top: 1px solid rgba(0,0,0,.3);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.05)
+      }
+
+      .am-offcanvas-bar .am-nav>li>a:hover {
+        background: #404040;
+        color: #fff
+      }
+
+      .am-offcanvas-bar .am-nav>li.am-nav-header {
+        color: #777;
+        background: #404040;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+        text-shadow: 0 1px 0 rgba(0,0,0,.5);
+        border-top: 1px solid rgba(0,0,0,.3);
+        font-weight: 400;
+        font-size: 75%
+      }
+
+      .am-offcanvas-bar .am-nav>li.am-active>a {
+        background: #1a1a1a;
+        color: #fff;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+      }
+
+      .am-offcanvas-bar .am-nav>li+li {
+        margin-top: 0;
+      }
+    }
+
+    .my-head {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .my-button {
+      position: fixed;
+      top: 0;
+      right: 0;
+      border-radius: 0;
+    }
+    .my-sidebar {
+      padding-right: 0;
+      border-right: 1px solid #eeeeee;
+    }
+
+    .my-footer {
+      border-top: 1px solid #eeeeee;
+      padding: 10px 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+	img.position{
+	margin:auto;
+	}
+	img.bq{
+	display:inline;
+	height:80px;
+	vertical-align:text-bottom;
+	}
+#customers
+  {
+  width:100%;
+  border-collapse:collapse;
+  text-align:center;
+
+
+  }
+
+#customers td, #customers th
+  {
+  font-size:1em;
+  border:1px solid gray;
+  padding:3px 7px 2px 7px;
+  	vertical-align:middle;
+	  text-align:center;
+	  width:10%;
+  }
+
+#customers th{
+background-color:gray;
+color:white;
+
+}
+
+#customers tr.alt td 
+  {
+  color:#000000;
+  background-color:rgb(240,240,240);
+    width:10%;
+		vertical-align:middle;
+  }
+ 
+/*.navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
+color: rgba(149, 149, 149, 0.8);}
+.navbar-custom .nav li a {
+color: rgba(80, 80, 80, 0.8);
+padding: 20px;
+}*/
+  </style>
+<script src="js/echarts3.0.js "></script>
+<script src="js/shanghai.js"></script>
+<script src="js/china.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+<!--             <a class="navbar-brand" href="index.html">Back to Home</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="http://www.psylife.cc/" target="_blank">About</a>
+                </li>
+                
+                <li>
+                    <a href="" target="_blank" >Contact</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('img/bg1.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>你的旅游指南</h1>
+                    
+                    <h2 class="subheading">闵行社会实践地点分析报告</h2>
+                    
+                    <span class="meta">整理人：徐逸峰  &nbsp;&nbsp;&nbsp;&nbsp; 2016-03-25</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+ 
+<article>
+    <div class="container">
+	
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p></p>
+				<p></p>
+				<p></p>
+				<p><strong></strong></p>
+		
+
+<h2 class="section-heading">1.具有“地区特色”的地点分布</h2>
+
+<p></p>
+
+<!-- <blockquote>A <strong>heat map</strong> is a graphical representation of data where the individual values contained in a matrix are represented as colors. Fractal maps and tree maps both often use a similar system of color-coding to represent the values taken by a variable in a hierarchy. The term is also used to mean its thematic application as a choropleth map.</blockquote> -->
+
+<p></p>
+
+<p></p>
+
+<div id="main1" style="height:600px;width:100%;margin:auto;"></div>
+<span class="caption text-muted">图1 社会实践旅游地图</span>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main1'));
+
+        // 指定图表的配置项和数据
+var geoCoordMap = {
+"江孜":[89.137982,31.367315],
+"云南":[101.592952,24.864213],
+"人民大会堂":[116.393141,39.913507],
+"安徽":[117.216005,31.859252],
+"黄山风景区":[118.077546,30.277746],
+"安徽黄山":[118.077546,30.277746],
+"侵华日军南京大屠杀遇难同胞纪念馆":[118.752487,32.040729],
+"南京":[118.778074,32.057236],
+"雨花台风景区":[118.785717,32.010431],
+"西天目山风景区":[119.454204,30.321459],
+"陶瓷博物馆":[119.838397,31.265097],
+"竹海风景区":[119.848041,31.275153],
+"常州博物馆":[119.977495,31.814563],
+"扬州、常州文化考察":[119.981861,31.771397],
+"环球动漫嬉戏谷":[120.051349,31.502509],
+"西溪国家湿地公园":[120.05758,30.272504],
+"衣裳街":[120.088919,30.808545],
+"太湖鼋头渚风景区":[120.241443,31.523875],
+"无锡":[120.305456,31.570037],
+"南浔":[120.309147,30.766831],
+"小莲庄":[120.431269,30.872954],
+"穹窿山景区":[120.434504,31.270766],
+"南浔古镇":[120.437889,30.874672],
+"苏州虎丘":[120.478424,31.351869],
+"乌镇风景区":[120.494193,30.748936],
+"天平山":[120.509603,31.283576],
+"绍兴":[120.592467,30.002365],
+"鲁迅故里":[120.593322,29.998349],
+"苏州":[120.619907,31.317987],
+"尚湖风景区":[120.699408,31.648191],
+"嘉兴南湖革命纪念馆":[120.770369,30.76101],
+"青浦大观园":[120.917726,31.078662],
+"东方绿舟":[121.020176,31.107362],
+"中国农民画村":[121.024544,30.927874],
+"陈云故居暨青浦革命历史纪念馆":[121.051058,31.0137],
+"上海朱家角古镇旅游区":[121.066194,31.114829],
+"永升江南农家乐园":[121.075818,31.245203],
+"寻梦园":[121.096733,31.047307],
+"青浦博物馆":[121.140888,31.15714],
+"沈家角":[121.144341,31.169659],
+"廊下生态园":[121.164976,30.792631],
+"青浦区崧泽遗址博物馆":[121.170632,31.152288],
+"上海汽车博物馆":[121.176224,31.286181],
+"金山农民画院":[121.176974,30.89967],
+"君宴生态园":[121.183451,31.210371],
+"上海新君宴蔬果生态园":[121.183451,31.210371],
+"福泉山":[121.187199,31.206561],
+"上海市少年儿童佘山活动营地":[121.194178,31.099914],
+"佘山国家森林公园":[121.201824,31.103147],
+"地震科普馆":[121.201824,31.103147],
+"上海天文台":[121.201824,31.103147],
+"钟书阁":[121.202683,31.039674],
+"上海月湖雕塑公园":[121.21412,31.103978],
+"人然合一生态园":[121.222426,31.15839],
+"君汇户外拓展军训训练中心":[121.222426,31.15839],
+"欢乐谷":[121.223768,31.099756],
+"万达广场(松江店)":[121.250424,31.062964],
+"嘉定体育馆":[121.250755,31.391571],
+"杨家巷":[121.251014,31.364338],
+"华亭镇":[121.251014,31.364338],
+"松江烈士陵园":[121.251474,31.000819],
+"松江方塔":[121.252478,31.012248],
+"松江博物馆":[121.252953,31.012538],
+"华亭人家":[121.258084,31.479017],
+"青青旅游世界":[121.261323,31.073631],
+"辰山植物园":[121.261323,31.073631],
+"嘉定紫藤园":[121.264534,31.384828],
+"闵行区牙病防治所":[121.294994,31.225705],
+"太太乐食品公司":[121.311196,31.264464],
+"上海影视乐园":[121.316587,31.018409],
+"古猗园":[121.322729,31.293242],
+"浦江书院":[121.338725,30.992076],
+"上海黄浦江水文化博物园":[121.339782,30.992397],
+"张充仁纪念馆":[121.357731,31.163622],
+"七宝古镇":[121.357731,31.163622],
+"七宝老街":[121.360559,31.15761],
+"七宝皮影艺术馆":[121.360578,31.15843],
+"马桥体育场":[121.362143,31.160891],
+"马桥镇文化体育活动中心":[121.362143,31.160891],
+"闵行区青少年实践教育基地":[121.368042,30.996639],
+"上海地铁博物馆":[121.37246,31.175625],
+"上海动物园":[121.373166,31.19999],
+"闵行体育公园":[121.373679,31.149135],
+"马桥电影院":[121.375408,31.035924],
+"闵行区烈士陵园":[121.37571,31.097286],
+"闵行区污水处理厂":[121.376888,31.126856],
+"马桥镇图书馆":[121.377754,31.034102],
+"乐虹坊精致生活广场":[121.377836,31.182208],
+"马桥公园":[121.37796,31.035225],
+"群众艺术馆":[121.378975,31.111919],
+"莘庄公园":[121.379756,31.108784],
+"水生园":[121.380644,31.007527],
+"海上国际影城(莘庄店)":[121.38518,31.11354],
+"黎安公园":[121.386785,31.133439],
+"沈家塔":[121.387616,31.213301],
+"苏家塔":[121.387616,31.213301],
+"2050/2500未来生活体验馆":[121.391245,31.244817],
+"曼可顿食品（上海）有限公司":[121.391585,31.082627],
+"顾村公园":[121.391789,31.350504],
+"宝山国际民间艺术博览馆":[121.391789,31.350504],
+"莘城中央公园":[121.392028,31.110925],
+"星期8小镇":[121.393167,31.112312],
+"武警中队":[121.395436,31.198402],
+"上海市闵行区青少年活动中心":[121.395488,31.111251],
+"闵行春申文化广场":[121.395682,31.111131],
+"闵行区博物馆":[121.395682,31.111131],
+"闵行区图书馆":[121.395682,31.111131],
+"上海城市剧院":[121.39621,31.110756],
+"颛桥公园":[121.397952,31.067985],
+"复旦大学附属儿科医院":[121.402424,31.14569],
+"颛桥镇图书馆":[121.402715,31.073006],
+"上海航天设备制造总厂":[121.403389,31.010914],
+"长风公园":[121.404403,31.227218],
+"星美国际影城":[121.405025,31.078161],
+"上海市档案馆":[121.405258,31.211518],
+"上海世纪友谊影城":[121.407372,31.137144],
+"乐玩陶艺(南方城店)":[121.407749,31.139706],
+"临港物流园区":[121.408331,30.884083],
+"光明乳业公司乳品二厂":[121.408862,31.190264],
+"碧江立体声影剧院":[121.408869,31.01257],
+"巧克力工场":[121.409112,31.138744],
+"上海康绿食品有限公司闵行分公司":[121.409445,31.060903],
+"上海碧江广场":[121.411237,31.013183],
+"梅陇镇文化体育中心":[121.411603,31.120152],
+"古美文化中心":[121.411924,31.148311],
+"上海新荷餐饮管理有限公司":[121.412611,31.033564],
+"上海航宇科普中心":[121.41313,31.142436],
+"锦江乐园":[121.417195,31.147123],
+"上海消防博物馆":[121.4176,31.224005],
+"闵行区少年宫":[121.419318,31.013566],
+"上海儿童博物馆":[121.419599,31.199918],
+"宋庆龄陵园":[121.419599,31.199918],
+"上海纺织服饰博物馆":[121.421012,31.208013],
+"中山公园":[121.421423,31.229414],
+"江川文化馆":[121.422034,31.014557],
+"老闵行历史文化陈列馆":[121.422034,31.014557],
+"上海巨影国际影城":[121.422081,31.194044],
+"红园":[121.422416,31.009525],
+"江川儿童城":[121.422954,31.009795],
+"江川剧场":[121.423096,31.009584],
+"桂林公园":[121.423362,31.172026],
+"毕家塔":[121.425024,31.093538],
+"韦家塔":[121.425024,31.093538],
+"上海师范大学附属中学":[121.425469,31.169511],
+"上海梅陇文化馆":[121.425609,31.144398],
+"金榜人家":[121.425918,31.023844],
+"上海彪雷国际物流有限公司":[121.426259,31.068185],
+"江川科学健康生活馆":[121.426505,31.008608],
+"闵行区科技馆":[121.426505,31.008608],
+"江川图书馆":[121.426713,31.008131],
+"上海市总工会沪西工人文化宫":[121.426739,31.244701],
+"新天地":[121.429178,31.212207],
+"闵行公园":[121.429678,31.013134],
+"南洋博仕欣居":[121.431217,31.024465],
+"东方射击射箭馆":[121.432684,31.200952],
+"长宁区少年宫":[121.433597,31.225971],
+"上海交通大学第二附属中学":[121.434344,31.017436],
+"钱学森旧居":[121.435678,31.226352],
+"上海影城":[121.436052,31.208622],
+"上海交通大学":[121.437416,31.023722],
+"徐汇区青少年活动中心":[121.440892,31.181244],
+"上海航天科技展示馆":[121.440951,31.177595],
+"土山湾博物馆":[121.441516,31.192945],
+"钱学森图书馆":[121.442349,31.207286],
+"上海交通大学植物园":[121.443731,31.033389],
+"上海电影博物馆":[121.444624,31.192699],
+"关港消防队":[121.446235,31.169152],
+"可口可乐上海公司":[121.448172,31.021974],
+"中国福利会少年宫":[121.450556,31.2272],
+"上海市科普教育基地":[121.450756,31.040671],
+"上海图书馆":[121.451829,31.214972],
+"久光百货":[121.452742,31.229734],
+"上海京剧院":[121.453588,31.181625],
+"大宁灵石公园":[121.454756,31.235381],
+"黄道婆纪念馆":[121.455173,31.13107],
+"上海市无线电管理局":[121.455749,31.218195],
+"上海植物园":[121.456653,31.152871],
+"龙华烈士陵园":[121.456881,31.179976],
+"宛平剧院":[121.457518,31.191361],
+"宋园":[121.458347,31.184941],
+"上海教育会堂":[121.458491,31.214733],
+"上海展览中心":[121.459315,31.230889],
+"上海工艺美术博物馆":[121.460491,31.216643],
+"华东师范大学":[121.460727,31.031235],
+"贺绿汀音乐厅":[121.461125,31.219969],
+"东平国家森林公园":[121.461179,31.665382],
+"上海大宁剧院":[121.463423,31.289824],
+"滨江公园":[121.463942,31.02778],
+"上海市禁毒科普教育馆":[121.46411,31.248264],
+"宝山钢铁股份公司":[121.466695,31.415173],
+"上海青少年科技探索馆":[121.469449,31.21283],
+"黄浦区青少年科技活动中心":[121.469449,31.21283],
+"世博会博物馆":[121.469528,31.233201],
+"上海自然博物馆":[121.470091,31.240079],
+"上海民防科普教育馆":[121.471187,31.220133],
+"闸北体育馆":[121.472567,31.260166],
+"吴泾温水游泳馆":[121.47259,31.0549],
+"吴泾电影院":[121.47413,31.04934],
+"吴泾镇文化馆":[121.47413,31.04934],
+"共青团中央机关旧址纪念馆":[121.474822,31.226115],
+"上海公安博物馆":[121.474921,31.204459],
+"闵行滨江湿地公园":[121.475015,31.046084],
+"哈皮皮烘焙园艺乐园":[121.475644,31.113717],
+"上房植物造景科普教育基地":[121.475735,31.11373],
+"上海工业旅游促进中心":[121.47741,31.216529],
+"上海浦东国际机场":[121.478063,31.069136],
+"上海玻璃博物馆":[121.479171,31.349654],
+"上海杜莎夫人蜡像馆":[121.479322,31.240692],
+"上海大剧院":[121.479359,31.235184],
+"后滩公园":[121.480374,31.189633],
+"巧克力开心乐园":[121.48176,31.187927],
+"中共第一次全国代表大会会址":[121.482023,31.226101],
+"上海城市规划展示馆":[121.482047,31.237181],
+"上海博物馆":[121.482579,31.234092],
+"上海新光影艺苑":[121.483029,31.242693],
+"吴泾公园":[121.485001,31.051838],
+"上海东方体育中心":[121.485299,31.159165],
+"世博体育公园":[121.485396,31.187062],
+"上海市格致中学":[121.486134,31.23653],
+"枫泾古镇":[121.48752,31.239427],
+"虹口足球场":[121.487542,31.27718],
+"浦东凌空农艺大观园":[121.487899,31.249162],
+"上海世博会纪念展":[121.488198,31.210243],
+"鲁迅公园":[121.489133,31.274169],
+"中国馆":[121.49524,31.19382],
+"宝山体育中心":[121.495927,31.399907],
+"虹口区青少年活动中心":[121.496355,31.271095],
+"上海世博展览馆":[121.496486,31.188341],
+"上海聚高高尔夫俱乐部":[121.496673,31.132967],
+"观光隧道":[121.49688,31.242706],
+"上海市淞沪抗战纪念馆":[121.500466,31.415059],
+"中华艺术宫":[121.500761,31.189995],
+"沙特馆":[121.502573,31.194074],
+"上海大自然野生昆虫馆":[121.50472,31.245941],
+"江南三民文化村":[121.505762,31.72428],
+"东方明珠":[121.505981,31.24465],
+"浦东香格里拉大酒店":[121.506482,31.241593],
+"和平公园":[121.507193,31.277253],
+"上海海洋水族馆":[121.50837,31.245981],
+"飞扬冰上运动中心":[121.512154,31.187557],
+"吴淞炮台湾湿地森林公园":[121.512821,31.398999],
+"海军上海博览馆":[121.51299,31.394334],
+"上海环球金融中心观光厅":[121.513463,31.239652],
+"恒生银行大厦":[121.513754,31.245795],
+"上海名人苑":[121.515412,31.229918],
+"江湾体育场":[121.519968,31.310978],
+"上海市闵行区杜行影剧院":[121.520685,31.070257],
+"上海航天博物馆":[121.523285,31.081475],
+"江湾高尔夫练习场":[121.525701,31.313004],
+"中国武术博物馆":[121.532183,31.317476],
+"黄兴公园":[121.534247,31.300915],
+"健康体验中心":[121.535398,31.633565],
+"杨浦公园":[121.539597,31.287105],
+"浦江影剧院":[121.540955,31.070961],
+"奉贤区海湾旅游区":[121.541821,30.832108],
+"上海科技馆":[121.547664,31.224126],
+"上海共青国家森林公园":[121.552142,31.327177],
+"滨江森林公园":[121.552268,31.370655],
+"召稼楼镇":[121.557109,31.081543],
+"世纪公园":[121.562915,31.227513],
+"上海海洋大学博物馆":[121.563518,31.292266],
+"上海磁浮列车":[121.56408,31.208872],
+"碧海金沙":[121.564208,30.824277],
+"巧克力梦工厂":[121.568556,31.215304],
+"蓝箭培训中心":[121.569583,30.849125],
+"上海新国际博览中心":[121.571555,31.211303],
+"奉贤申隆生态园":[121.581501,30.900148],
+"上海无线电科普教育基地":[121.589412,30.935334],
+"国家无线电监测中心上海监测站":[121.593674,30.867188],
+"都市菜园":[121.59671,30.871211],
+"华东师范大学第二附属中学":[121.598158,31.205638],
+"上海中医药博物馆":[121.603973,31.20064],
+"前进远卓教育培训中心":[121.616934,31.653985],
+"上海动画博物馆":[121.618347,31.217842],
+"可口可乐博物馆":[121.618861,31.249058],
+"上海申美饮料食品公司":[121.618861,31.249058],
+"上海孙桥现代农业开发区":[121.629065,31.169106],
+"孙桥现代农业园":[121.638481,31.230895],
+"洋山深水港":[121.638481,31.230895],
+"上海周浦花海":[121.649075,31.125866],
+"上海西点军训":[121.682996,30.879144],
+"佳华教育进修学院":[121.682998,30.879604],
+"上海海湾国家森林公园":[121.684737,30.872308],
+"上海游龙石文化科普馆":[121.69933,31.16933],
+"上海健生教育活动中心":[121.721592,30.882699],
+"上海野生动物园":[121.7225,31.059532],
+"上海地质科普馆":[121.729346,31.211455],
+"五四农场":[121.733228,30.90819],
+"临江公园":[121.743281,31.231075],
+"张闻天故居":[121.769511,31.137591],
+"南汇大学城":[121.769733,31.059808],
+"上海思博职业技术学院":[121.787213,31.047381],
+"上海鲜花港":[121.908096,30.95272],
+"上海滨海森林公园":[121.91698,30.978945],
+"中国航海博物馆":[121.92611,30.903546],
+"城市公园":[121.931052,30.907984],
+"上海滴水湖":[121.932946,30.903824]
+};
+
+var convertData = function (data) {
+    var res = [];
+    for (var i = 0; i < data.length; i++) {
+        var geoCoord = geoCoordMap[data[i].name];
+        if (geoCoord) {
+            res.push({
+                name: data[i].name,
+                value: geoCoord.concat(data[i].value)
+            });
+        }
+    }
+    return res;
+};
+
+option = {
+    backgroundColor: '#404a59',
+    title: {
+        text: '社会实践旅游地一览',
+        subtext: '上海地区',
+        x:'center',
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: function (params) {
+            return params.name;
+        }
+    },
+    legend: {
+        orient: 'vertical',
+		show:false,
+        y: 'bottom',
+        x:'right',
+        data:['高校','公园','购物中心','古镇','故居','机关','历史遗址',
+		'陵园','农场','其他','企业','实践基地','体育场馆','图书馆','文化宫','休闲度假',
+		'学校','医院','影剧院','园区','展馆','中学','自然景观'],
+        textStyle: {
+            color: '#fff'
+        }
+    },
+
+    geo: {
+        map: '上海',
+		roam: true,
+        label: {
+            emphasis: {
+                show: false
+            }
+        },
+        itemStyle: {
+            normal: {
+                areaColor: '#323c48',
+                borderColor: '#111'
+            },
+            emphasis: {
+                areaColor: '#2a333d'
+            }
+        }
+    },
+    series: [
+        {
+            name: '高校',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(37, 140, 249, 0.8)',
+                    color: 'rgba(37, 140, 249, 0.8)'
+                }
+            },
+            data: convertData([
+               {name:"上海交通大学",value:1},
+{name:"华东师范大学",value:1},
+{name:"南汇大学城",value:1}
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+
+        },
+        {
+            name: '公园',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,			
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(14, 241, 242, 0.8)',
+                    color: 'rgba(14, 241, 242, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"环球动漫嬉戏谷",value:1},
+{name:"西溪国家湿地公园",value:1},
+{name:"太湖鼋头渚风景区",value:1},
+{name:"青浦大观园",value:1},
+{name:"东方绿舟",value:1},
+{name:"寻梦园",value:1},
+{name:"上海市少年儿童佘山活动营地",value:1},
+{name:"佘山国家森林公园",value:1},
+{name:"上海月湖雕塑公园",value:1},
+{name:"欢乐谷",value:1},
+{name:"松江方塔",value:1},
+{name:"青青旅游世界",value:1},
+{name:"辰山植物园",value:1},
+{name:"嘉定紫藤园",value:1},
+{name:"上海影视乐园",value:1},
+{name:"古猗园",value:1},
+{name:"上海黄浦江水文化博物园",value:1},
+{name:"上海动物园",value:1},
+{name:"闵行体育公园",value:1},
+{name:"马桥公园",value:1},
+{name:"莘庄公园",value:1},
+{name:"水生园",value:1},
+{name:"黎安公园",value:1},
+{name:"顾村公园",value:1},
+{name:"莘城中央公园",value:1},
+{name:"颛桥公园",value:1},
+{name:"长风公园",value:1},
+{name:"锦江乐园",value:1},
+{name:"中山公园",value:1},
+{name:"红园",value:1},
+{name:"桂林公园",value:1},
+{name:"闵行公园",value:1},
+{name:"大宁灵石公园",value:1},
+{name:"上海植物园",value:1},
+{name:"东平国家森林公园",value:1},
+{name:"滨江公园",value:1},
+{name:"闵行滨江湿地公园",value:1},
+{name:"后滩公园",value:1},
+{name:"吴泾公园",value:1},
+{name:"世博体育公园",value:1},
+{name:"浦东凌空农艺大观园",value:1},
+{name:"鲁迅公园",value:1},
+{name:"和平公园",value:1},
+{name:"吴淞炮台湾湿地森林公园",value:1},
+{name:"上海名人苑",value:1},
+{name:"黄兴公园",value:1},
+{name:"杨浦公园",value:1},
+{name:"上海共青国家森林公园",value:1},
+{name:"滨江森林公园",value:1},
+{name:"世纪公园",value:1},
+{name:"碧海金沙",value:1},
+{name:"奉贤申隆生态园",value:1},
+{name:"洋山深水港",value:1},
+{name:"上海周浦花海",value:1},
+{name:"上海海湾国家森林公园",value:1},
+{name:"上海野生动物园",value:1},
+{name:"临江公园",value:1},
+{name:"上海鲜花港",value:1},
+{name:"上海滨海森林公园",value:1},
+{name:"城市公园",value:1},
+{name:"上海滴水湖",value:1}
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+
+        },	
+        {
+            name: '购物中心',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(255, 255, 255, 0.8)',
+                    color: 'rgba(255, 255, 255, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"万达广场(松江店)",value:1},
+{name:"乐虹坊精致生活广场",value:1},
+{name:"上海碧江广场",value:1},
+{name:"江川儿童城",value:1},
+{name:"新天地",value:1},
+{name:"久光百货",value:1}
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '古镇',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(37, 140, 249, 0.8)',
+                    color: 'rgba(37, 140, 249, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"小莲庄",value:5},
+{name:"南浔古镇",value:5},
+{name:"乌镇风景区",value:5},
+{name:"上海朱家角古镇旅游区",value:1},
+{name:"七宝古镇",value:1},
+{name:"七宝老街",value:1},
+{name:"枫泾古镇",value:1},
+{name:"召稼楼镇",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		
+		        {
+            name: '故居',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(14, 241, 242, 0.8)',
+                    color: 'rgba(14, 241, 242, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"鲁迅故里",value:1},
+{name:"钱学森旧居",value:1},
+{name:"张闻天故居",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		        {
+            name: '机关',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(255, 255, 255, 0.8)',
+                    color: 'rgba(255, 255, 255, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"闵行区污水处理厂",value:1},
+{name:"武警中队",value:1},
+{name:"上海航天设备制造总厂",value:1},
+{name:"关港消防队",value:1},
+{name:"上海市无线电管理局",value:1},
+{name:"上海工业旅游促进中心",value:1},
+{name:"上海浦东国际机场",value:1},
+{name:"国家无线电监测中心上海监测站",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		        {
+            name: '历史遗址',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(37, 140, 249, 0.8)',
+                    color: 'rgba(37, 140, 249, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"雨花台风景区",value:1},
+{name:"福泉山",value:1},
+{name:"宋庆龄陵园",value:1},
+{name:"中共第一次全国代表大会会址",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '陵园',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(14, 241, 242, 0.8)',
+                    color: 'rgba(14, 241, 242, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"松江烈士陵园",value:1},
+{name:"闵行区烈士陵园",value:1},
+{name:"龙华烈士陵园",value:1},
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '农场',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(255, 255, 255, 0.8)',
+                    color: 'rgba(255, 255, 255, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"五四农场",value:1},
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '其他',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(37, 140, 249, 0.8)',
+                    color: 'rgba(37, 140, 249, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"衣裳街",value:1},
+{name:"钟书阁",value:1},
+{name:"君汇户外拓展军训训练中心",value:1},
+{name:"华亭镇",value:1},
+{name:"浦江书院",value:1},
+{name:"2050/2500未来生活体验馆",value:1},
+{name:"星期8小镇",value:1},
+{name:"乐玩陶艺(南方城店)",value:1},
+{name:"临港物流园区",value:1},
+{name:"巧克力工场",value:1},
+{name:"哈皮皮烘焙园艺乐园",value:1},
+{name:"巧克力开心乐园",value:1},
+{name:"观光隧道",value:1},
+{name:"健康体验中心",value:1},
+{name:"上海磁浮列车",value:1},
+{name:"蓝箭培训中心",value:1},
+{name:"前进远卓教育培训中心",value:1},
+{name:"上海西点军训",value:1},
+{name:"佳华教育进修学院",value:1},
+
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '企业',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(14, 241, 242, 0.8)',
+                    color: 'rgba(14, 241, 242, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"太太乐食品公司",value:1},
+{name:"曼可顿食品（上海）有限公司",value:1},
+{name:"光明乳业公司乳品二厂",value:1},
+{name:"上海康绿食品有限公司闵行分公司",value:1},
+{name:"上海新荷餐饮管理有限公司",value:1},
+{name:"上海彪雷国际物流有限公司",value:1},
+{name:"可口可乐上海公司",value:1},
+{name:"宝山钢铁股份公司",value:1},
+{name:"浦东香格里拉大酒店",value:1},
+{name:"恒生银行大厦",value:1},
+{name:"上海申美饮料食品公司",value:1},
+
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '实践基地',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(255, 255, 255, 0.8)',
+                    color: 'rgba(255, 255, 255, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"闵行区青少年实践教育基地",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '体育场馆',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(37, 140, 249, 0.8)',
+                    color: 'rgba(37, 140, 249, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"嘉定体育馆",value:1},
+{name:"马桥体育场",value:1},
+{name:"马桥镇文化体育活动中心",value:1},
+{name:"梅陇镇文化体育中心",value:1},
+{name:"东方射击射箭馆",value:1},
+{name:"闸北体育馆",value:1},
+{name:"吴泾温水游泳馆",value:1},
+{name:"上海东方体育中心",value:1},
+{name:"虹口足球场",value:1},
+{name:"宝山体育中心",value:1},
+{name:"上海聚高高尔夫俱乐部",value:1},
+{name:"飞扬冰上运动中心",value:1},
+{name:"江湾体育场",value:1},
+{name:"江湾高尔夫练习场",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '图书馆',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(14, 241, 242, 0.8)',
+                    color: 'rgba(14, 241, 242, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"马桥镇图书馆",value:1},
+{name:"闵行区图书馆",value:1},
+{name:"颛桥镇图书馆",value:1},
+{name:"江川图书馆",value:1},
+{name:"钱学森图书馆",value:1},
+{name:"上海图书馆",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '文化宫',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(255, 255, 255, 0.8)',
+                    color: 'rgba(255, 255, 255, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"上海市闵行区青少年活动中心",value:1},
+{name:"闵行春申文化广场",value:1},
+{name:"古美文化中心",value:1},
+{name:"闵行区少年宫",value:1},
+{name:"上海梅陇文化馆",value:1},
+{name:"江川科学健康生活馆",value:1},
+{name:"上海市总工会沪西工人文化宫",value:1},
+{name:"长宁区少年宫",value:1},
+{name:"徐汇区青少年活动中心",value:1},
+{name:"中国福利会少年宫",value:1},
+{name:"黄浦区青少年科技活动中心",value:1},
+{name:"吴泾镇文化馆",value:1},
+{name:"虹口区青少年活动中心",value:1},
+{name:"上海健生教育活动中心",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '休闲度假',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(37, 140, 249, 0.8)',
+                    color: 'rgba(37, 140, 249, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"中国农民画村",value:1},
+{name:"永升江南农家乐园",value:1},
+{name:"沈家角",value:1},
+{name:"廊下生态园",value:1},
+{name:"君宴生态园",value:1},
+{name:"上海新君宴蔬果生态园",value:1},
+{name:"人然合一生态园",value:1},
+{name:"华亭人家",value:1},
+{name:"江南三民文化村",value:1},
+{name:"奉贤区海湾旅游区",value:1},
+{name:"都市菜园",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '医院',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(14, 241, 242, 0.8)',
+                    color: 'rgba(14, 241, 242, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"闵行区牙病防治所",value:1},
+{name:"复旦大学附属儿科医院",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '影剧院',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(255, 255, 255, 0.8)',
+                    color: 'rgba(255, 255, 255, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"马桥电影院",value:1},
+{name:"海上国际影城(莘庄店)",value:1},
+{name:"上海城市剧院",value:1},
+{name:"星美国际影城",value:1},
+{name:"上海世纪友谊影城",value:1},
+{name:"碧江立体声影剧院",value:1},
+{name:"上海巨影国际影城",value:1},
+{name:"江川剧场",value:1},
+{name:"上海影城",value:1},
+{name:"上海京剧院",value:1},
+{name:"宛平剧院",value:1},
+{name:"贺绿汀音乐厅",value:1},
+{name:"上海大宁剧院",value:1},
+{name:"吴泾电影院",value:1},
+{name:"上海大剧院",value:1},
+{name:"上海新光影艺苑",value:1},
+{name:"上海市闵行区杜行影剧院",value:1},
+{name:"浦江影剧院",value:1},
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '园区',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(37, 140, 249, 0.8)',
+                    color: 'rgba(37, 140, 249, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"上海孙桥现代农业开发区",value:1},
+{name:"孙桥现代农业园",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '展馆',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(14, 241, 242, 0.8)',
+                    color: 'rgba(14, 241, 242, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"人民大会堂",value:1},
+{name:"侵华日军南京大屠杀遇难同胞纪念馆",value:1},
+{name:"陶瓷博物馆",value:1},
+{name:"常州博物馆",value:1},
+{name:"嘉兴南湖革命纪念馆",value:1},
+{name:"陈云故居暨青浦革命历史纪念馆",value:1},
+{name:"青浦博物馆",value:1},
+{name:"青浦区崧泽遗址博物馆",value:1},
+{name:"上海汽车博物馆",value:1},
+{name:"金山农民画院",value:1},
+{name:"地震科普馆",value:1},
+{name:"上海天文台",value:1},
+{name:"松江博物馆",value:1},
+{name:"张充仁纪念馆",value:1},
+{name:"七宝皮影艺术馆",value:1},
+{name:"上海地铁博物馆",value:1},
+{name:"群众艺术馆",value:1},
+{name:"宝山国际民间艺术博览馆",value:1},
+{name:"闵行区博物馆",value:1},
+{name:"上海市档案馆",value:1},
+{name:"上海航宇科普中心",value:1},
+{name:"上海消防博物馆",value:1},
+{name:"上海儿童博物馆",value:1},
+{name:"上海纺织服饰博物馆",value:1},
+{name:"江川文化馆",value:1},
+{name:"老闵行历史文化陈列馆",value:1},
+{name:"闵行区科技馆",value:1},
+{name:"上海航天科技展示馆",value:1},
+{name:"土山湾博物馆",value:1},
+{name:"上海交通大学植物园",value:1},
+{name:"上海电影博物馆",value:1},
+{name:"上海市科普教育基地",value:1},
+{name:"黄道婆纪念馆",value:1},
+{name:"上海教育会堂",value:1},
+{name:"上海展览中心",value:1},
+{name:"上海工艺美术博物馆",value:1},
+{name:"上海市禁毒科普教育馆",value:1},
+{name:"上海青少年科技探索馆",value:1},
+{name:"世博会博物馆",value:1},
+{name:"上海自然博物馆",value:1},
+{name:"上海民防科普教育馆",value:1},
+{name:"共青团中央机关旧址纪念馆",value:1},
+{name:"上海公安博物馆",value:1},
+{name:"上房植物造景科普教育基地",value:1},
+{name:"上海玻璃博物馆",value:1},
+{name:"上海杜莎夫人蜡像馆",value:1},
+{name:"上海城市规划展示馆",value:1},
+{name:"上海博物馆",value:1},
+{name:"上海世博会纪念展",value:1},
+{name:"中国馆",value:1},
+{name:"上海世博展览馆",value:1},
+{name:"上海市淞沪抗战纪念馆",value:1},
+{name:"中华艺术宫",value:1},
+{name:"沙特馆",value:1},
+{name:"上海大自然野生昆虫馆",value:1},
+{name:"东方明珠",value:1},
+{name:"上海海洋水族馆",value:1},
+{name:"海军上海博览馆",value:1},
+{name:"上海环球金融中心观光厅",value:1},
+{name:"上海航天博物馆",value:1},
+{name:"中国武术博物馆",value:1},
+{name:"上海科技馆",value:1},
+{name:"上海海洋大学博物馆",value:1},
+{name:"巧克力梦工厂",value:1},
+{name:"上海新国际博览中心",value:1},
+{name:"上海无线电科普教育基地",value:1},
+{name:"上海中医药博物馆",value:1},
+{name:"上海动画博物馆",value:1},
+{name:"可口可乐博物馆",value:1},
+{name:"上海游龙石文化科普馆",value:1},
+{name:"上海地质科普馆",value:1},
+{name:"中国航海博物馆",value:1},
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '中学',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(255, 255, 255, 0.8)',
+                    color: 'rgba(255, 255, 255, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"上海师范大学附属中学",value:1},
+{name:"上海交通大学第二附属中学",value:1},
+{name:"上海市格致中学",value:1},
+{name:"华东师范大学第二附属中学",value:1},
+{name:"上海思博职业技术学院",value:1},
+
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+		{
+            name: '自然景观',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            symbolSize: 3,
+            large: true,
+            itemStyle: {
+                normal: {
+                    shadowBlur: 3,
+                    shadowColor: 'rgba(37, 140, 249, 0.8)',
+                    color: 'rgba(37, 140, 249, 0.8)'
+                }
+            },
+            data: convertData([
+{name:"黄山风景区",value:1},
+{name:"安徽黄山",value:1},
+{name:"西天目山风景区",value:1},
+{name:"竹海风景区",value:1},
+{name:"穹窿山景区",value:1},
+{name:"天平山",value:1},
+{name:"尚湖风景区",value:1},
+            ]),
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            }
+		},
+    ]
+}
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>	
+
+<p></p>
+
+
+<div id="main6" style="height:600px;width:100%;margin:auto;"></div>
+<span class="caption text-muted">图1-1 各类社会实践占比</span>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main6'));
+
+        // 指定图表的配置项和数据
+option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'right',
+        y:'center',
+        data:['展馆',
+'公园',
+'其他',
+'企业',
+'影剧院',
+'体育场馆',
+'文化宫',
+'机关',
+'休闲度假',
+'购物中心',
+'古镇',
+'自然景观',
+'图书馆',
+'中学',
+'历史遗址',
+'实践基地',
+'高校',
+'陵园',
+'故居',
+'园区',
+'医院',
+'学校',
+'农场',
+]
+    },
+    series: [
+        {
+            name:'实践地点类型',
+            type:'pie',
+            radius: ['50%', '70%'],
+            center: ['40%', '50%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            roseType:false,
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:91,name:'展馆',},
+{value:65,name:'公园',},
+{value:26,name:'其他',},
+{value:25,name:'企业',},
+{value:22,name:'影剧院',},
+{value:20,name:'体育场馆',},
+{value:17,name:'文化宫',},
+{value:15,name:'机关',},
+{value:12,name:'休闲度假',},
+{value:9,name:'购物中心',},
+{value:8,name:'古镇',},
+{value:7,name:'自然景观',},
+{value:7,name:'图书馆',},
+{value:5,name:'中学',},
+{value:4,name:'历史遗址',},
+{value:4,name:'实践基地',},
+{value:3,name:'高校',},
+{value:3,name:'陵园',},
+{value:3,name:'故居',},
+{value:3,name:'园区',},
+{value:2,name:'医院',},
+{value:2,name:'学校',},
+{value:1,name:'农场',},
+
+            ]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>	
+
+
+<p></p>
+<p><img src="img/power_map.png" class="position"></img></p>
+<span class="caption text-muted">图2 各类社会实践一览</span>
+<p></p>
+
+<h2 class="section-heading">2.“热门”景点</h2>
+
+<div id="main2" style="height:600px;width:100%;margin:auto;"></div>
+<span class="caption text-muted">图3 热门旅游景点</span>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main2'));
+
+        // 指定图表的配置项和数据
+option = {
+    title: {
+        text: '学校热门景点一览',
+        subtext: '学校数>20',
+		x:'center'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+    },
+    yAxis: {
+        type: 'category',
+        data: ['上海海湾国家森林公园',
+'上海植物园',
+'锦江乐园',
+'中国航海博物馆',
+'上海野生动物园',
+'辰山植物园',
+'奉贤申隆生态园',
+'世纪公园',
+'龙华烈士陵园',
+'欢乐谷',
+'顾村公园',
+'上海共青国家森林公园',
+'长风公园',
+'闵行区青少年实践教育基地',
+'东方绿舟',
+'上海科技馆',
+'上海月湖雕塑公园',
+'上海市禁毒科普教育馆',
+'上海市闵行区青少年活动中心',
+'上海城市剧院'
+
+]
+    },
+    series: [
+        {
+            name: '学校数',
+            type: 'bar',
+            data: [20,
+21,
+23,
+26,
+27,
+28,
+28,
+28,
+29,
+33,
+34,
+34,
+35,
+38,
+40,
+40,
+40,
+47,
+52,
+64
+]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+<p>可以分类再看看。</p>
+
+<div id="main7" style="height:600px;width:100%;margin:auto;"></div>
+<span class="caption text-muted">图4 学校与各类社会实践一览</span>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main7'));
+
+        // 指定图表的配置项和数据
+option = {
+
+        title: {
+            text: '社会实践景点',
+            x: 'center'
+        },
+        series: [
+            {
+                name:'景点',
+                type:'treemap',
+                visibleMin: 300,
+                label: {
+                    show: true,
+                    formatter: '{b}'
+                },
+                itemStyle: {
+                    normal: {
+                        borderColor: '#fff'
+                    }
+                },
+        roam:'zoomToNode',
+        levels:[
+            {
+                itemStyle: {
+                    normal: {
+                        borderWidth: 0,
+                        gapWidth: 5
+                    }
+                }
+            },
+            {
+                itemStyle: {
+                    normal: {
+                        gapWidth: 1
+                    }
+                }
+            },
+            {
+                colorSaturation: [0.35, 0.5],
+                itemStyle: {
+                    normal: {
+                        gapWidth: 1,
+                        borderColorSaturation: 0.6
+                    }
+                }
+            }
+        ],
+        data: [
+    {value:270,name:'参观考察类',
+        children: [
+            {value:40,name:'上海市禁毒科普教育馆'},
+{value:38,name:'上海月湖雕塑公园'},
+{value:37,name:'上海科技馆'},
+{value:33,name:'东方绿舟'},
+{value:33,name:'长风公园'},
+{value:32,name:'顾村公园'},
+{value:30,name:'上海共青国家森林公园'},
+{value:27,name:'辰山植物园'},
+        ]
+    },
+     {value:132,name:'基地实践类',
+        children: [
+            {value:37,name:'闵行区青少年实践教育基地'},
+{value:31,name:'上海市闵行区青少年活动中心'},
+{value:21,name:'学校'},
+{value:9,name:'社会实践'},
+{value:9,name:'上海共青国家森林公园'},
+{value:9,name:'上海市禁毒科普教育馆'},
+{value:8,name:'东方绿舟'},
+{value:8,name:'社区'},
+        ]
+    },   
+     {value:64,name:'军政训练类',
+        children: [
+            {value:34,name:'学校'},
+{value:5,name:'东方绿舟'},
+{value:3,name:'佳华教育进修学院'},
+{value:2,name:'上海思博职业技术学院'},
+{value:2,name:'青青民防教育基地'},
+{value:2,name:'金山少年军校'},
+{value:2,name:'军训基地'},
+{value:2,name:'上海地质科普馆'},
+{value:2,name:'蓝箭培训中心'},
+{value:2,name:'上海西点军训'},
+{value:2,name:'社会实践'},
+{value:2,name:'健生基地'},
+{value:2,name:'浦东凌空农艺大观园'},
+{value:2,name:'南汇'},
+        ]
+    },       
+     {value:180,name:'科技文化类',
+        children: [
+           {value:65,name:'学校'},
+{value:52,name:'上海城市剧院'},
+{value:20,name:'上海市闵行区青少年活动中心'},
+{value:13,name:'社区'},
+{value:8,name:'上海科技馆'},
+{value:7,name:'江川剧场'},
+{value:5,name:'锦江乐园'},
+{value:5,name:'电影院'},
+{value:5,name:'吴泾镇文化馆'},
+        ]
+    }, 
+     {value:178,name:'其他类',
+        children: [
+           {value:64,name:'学校'},
+{value:32,name:'社区'},
+{value:25,name:'欢乐谷'},
+{value:12,name:'上海城市剧院'},
+{value:11,name:'居民家'},
+{value:9,name:'上海市闵行区青少年活动中心'},
+{value:7,name:'上海月湖雕塑公园'},
+{value:6,name:'长风公园'},
+{value:6,name:'社会实践'},
+{value:6,name:'龙华烈士陵园'},
+        ]
+    }, 
+     {value:206,name:'志愿服务类',
+        children: [
+          {value:73,name:'社区'},
+{value:69,name:'学校'},
+{value:29,name:'敬老院'},
+{value:17,name:'道路'},
+{value:6,name:'居民家'},
+{value:3,name:'吴泾公园'},
+{value:3,name:'上海市闵行区青少年活动中心'},
+{value:3,name:'闵行区图书馆'},
+{value:3,name:'闵行体育公园'}
+        ]
+    },         
+    ]
+            }
+        ]};
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+
+
+<p></p>
+
+
+<div id="main3" style="height:900px;width:100%;margin:auto;"></div>
+<span class="caption text-muted">图5 热门旅游景点对比</span>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main3'));
+
+        // 指定图表的配置项和数据
+option = {
+    title:{text:'热点景区与学校热点对比',x:'center'},
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    grid: [
+        {x: '15%', y: '7%', width: '30%', height: '38%'},
+        {x2: '7%', y: '7%', width: '30%', height: '38%'},
+        {x: '15%', y2: '7%', width: '30%', height: '38%'},
+        {x2: '7%', y2: '7%', width: '30%', height: '38%'}
+    ],
+    xAxis: [{gridIndex: 0,type: 'value',boundaryGap: [0, 0.01]},
+            {gridIndex: 1,type: 'value',boundaryGap: [0, 0.01]},
+            {gridIndex: 2,type: 'value',boundaryGap: [0, 0.01]},
+            {gridIndex: 3,type: 'value',boundaryGap: [0, 0.01]}],
+    yAxis: [{gridIndex: 0,ttype: 'category',data: ['中国航海博物馆',
+'上海野生动物园',
+'辰山植物园',
+'奉贤申隆生态园',
+'世纪公园',
+'龙华烈士陵园',
+'欢乐谷',
+'顾村公园',
+'上海共青国家森林公园',
+'长风公园',
+'闵行区青少年实践教育基地',
+'东方绿舟',
+'上海科技馆',
+'上海月湖雕塑公园',
+'上海市禁毒科普教育馆',
+'上海市闵行区青少年活动中心',
+'上海城市剧院',
+]},
+            {gridIndex: 1,ttype: 'category',data: ['辰山植物园',
+'上海共青国家森林公园',
+'顾村公园',
+'东方绿舟',
+'长风公园',
+'上海科技馆',
+'上海月湖雕塑公园',
+'上海市禁毒科普教育馆',
+]},
+            {gridIndex: 2,ttype: 'category',data: ['上海欢乐谷',
+'上海环球金融中心',
+'新天地',
+'中华艺术宫(China Art Museum)',
+'陆家嘴',
+'黄浦江',
+'江海关',
+'上海吴淞炮台湾湿地森林公园',
+'上海博物馆',
+'浦江游览',
+'上海电影博物馆',
+'外滩万国建筑博览群',
+'外滩',
+'上海自然博物馆',
+
+]},
+            {gridIndex: 3,ttype: 'category',data: ['上海环球金融中心',
+'朱家角古镇',
+'七宝老街(七宝镇步行街)',
+'上海博物馆',
+'外滩万国建筑博览群',
+'新天地',
+'上海杜莎夫人蜡像馆',
+'中华艺术宫(China Art Museum)',
+'外白渡桥',
+'陆家嘴',
+'豫园',
+'黄浦江',
+'田子坊',
+'东方明珠广播电视塔',
+'老城隍庙',
+'南京路步行街',
+'外滩',
+]}],
+    series: [
+        {
+            name: '所有',
+            type: 'bar',
+            xAxisIndex: [0],
+            yAxisIndex: [0],
+            data: [26,
+27,
+28,
+28,
+28,
+29,
+33,
+34,
+34,
+35,
+38,
+40,
+40,
+40,
+47,
+52,
+64,
+]
+        },
+        {
+            name: '社会实践类',
+            type: 'bar',
+            xAxisIndex: [1],
+            yAxisIndex: [1],
+            data: [27,
+30,
+32,
+33,
+33,
+37,
+38,
+40,
+]
+        },
+        {
+            name: '大众评分',
+            type: 'bar',
+            xAxisIndex: [2],
+            yAxisIndex: [2],
+            data: [4.3,
+4.3,
+4.3,
+4.3,
+4.3,
+4.3,
+4.4,
+4.4,
+4.4,
+4.5,
+4.5,
+4.5,
+4.5,
+4.6,
+
+]
+        },
+        {
+            name: '评价人数',
+            type: 'bar',
+            xAxisIndex: [3],
+            yAxisIndex: [3],
+            data: [1034,
+1038,
+1171,
+1361,
+1444,
+1616,
+1680,
+1809,
+1920,
+2155,
+2353,
+2988,
+3673,
+3797,
+4442,
+5177,
+8928,
+]
+        },
+    ]
+};
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+
+<h2 class="section-heading">3.为景点正名</h2>
+<p></p>
+ <p><a href="http://naotu.baidu.com/file/5ddaed875a68d8eb26745e4f96343f67?token=448a4a7b3be9ceab" target="_blank">点我</a></p>
+<p><img src="img/demo.png" class="position"></img></p>
+<span class="caption text-muted">图5 常见错误示意图</span>
+<p></p>
+
+
+<h2 class="section-heading">4.学校出行模式</h2>
+
+<p></p>
+<div id="main4" style="height:700px;width:100%;margin:auto;"></div>
+<span class="caption text-muted">图6 出行模式</span>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main4'));
+
+        // 指定图表的配置项和数据
+
+    option = {
+        title: {
+            text: '社会实践出行模式',
+            subtext: '全部',
+            top: 'bottom',
+            left: 'right'
+        },
+		height:450,
+        tooltip: {},
+        legend: {data:['展馆','公园','陵园','其他','体育场馆','图书馆',
+'影剧院','休闲度假','古镇','企业','中学','学校','文化宫','历史遗址',
+'高校','园区','实践基地','机关','故居','社区'
+]},
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series : [
+            {
+                name: '地点',
+                type: 'graph',
+                layout: 'circular',
+           nodes: [
+{name:'上海市禁毒科普教育馆',value:29,symbolSize:29,category:'展馆'},
+{name:'世纪公园',value:22,symbolSize:22,category:'公园'},
+{name:'锦江乐园',value:20,symbolSize:20,category:'公园'},
+{name:'长风公园',value:14,symbolSize:14,category:'公园'},
+{name:'上海植物园',value:13,symbolSize:13,category:'公园'},
+{name:'顾村公园',value:12,symbolSize:12,category:'公园'},
+{name:'龙华烈士陵园',value:12,symbolSize:12,category:'陵园'},
+{name:'上海大自然野生昆虫馆',value:11,symbolSize:11,category:'展馆'},
+{name:'上海共青国家森林公园',value:10,symbolSize:10,category:'公园'},
+{name:'2050/2500未来生活体验馆',value:9,symbolSize:9,category:'其他'},
+{name:'大宁灵石公园',value:8,symbolSize:8,category:'公园'},
+{name:'上海航宇科普中心',value:8,symbolSize:8,category:'展馆'},
+{name:'宝山体育中心',value:7,symbolSize:7,category:'体育场馆'},
+{name:'上海公安博物馆',value:7,symbolSize:7,category:'展馆'},
+{name:'佘山',value:7,symbolSize:7,category:'公园'},
+{name:'江湾体育场',value:7,symbolSize:7,category:'体育场馆'},
+{name:'中国航海博物馆',value:7,symbolSize:7,category:'展馆'},
+{name:'临江公园',value:7,symbolSize:7,category:'公园'},
+{name:'上海月湖雕塑公园',value:7,symbolSize:7,category:'公园'},
+{name:'上海动画博物馆',value:7,symbolSize:7,category:'展馆'},
+{name:'中华艺术宫',value:6,symbolSize:6,category:'展馆'},
+{name:'上海汽车博物馆',value:6,symbolSize:6,category:'展馆'},
+{name:'上海海洋水族馆',value:6,symbolSize:6,category:'展馆'},
+{name:'鲁迅公园',value:5,symbolSize:5,category:'公园'},
+{name:'上海影视乐园',value:5,symbolSize:5,category:'公园'},
+{name:'辰山植物园',value:5,symbolSize:5,category:'公园'},
+{name:'社区',value:5,symbolSize:5,category:'其他'},
+{name:'和平公园',value:5,symbolSize:5,category:'公园'},
+{name:'钱学森图书馆',value:5,symbolSize:5,category:'图书馆'},
+{name:'上海航天博物馆',value:5,symbolSize:5,category:'展馆'},
+{name:'宛平剧院',value:4,symbolSize:4,category:'影剧院'},
+{name:'中国农民画村',value:4,symbolSize:4,category:'休闲度假'},
+{name:'枫泾古镇',value:4,symbolSize:4,category:'古镇'},
+{name:'宝山国际民间艺术博览馆',value:4,symbolSize:4,category:'展馆'},
+{name:'闵行体育公园',value:4,symbolSize:4,category:'公园'},
+{name:'上海滴水湖',value:4,symbolSize:4,category:'公园'},
+{name:'上海科技馆',value:4,symbolSize:4,category:'展馆'},
+{name:'杨浦公园',value:3,symbolSize:3,category:'公园'},
+{name:'太太乐食品公司',value:3,symbolSize:3,category:'企业'},
+{name:'敬老院',value:3,symbolSize:3,category:'其他'},
+{name:'黄兴公园',value:3,symbolSize:3,category:'公园'},
+{name:'上海动物园',value:3,symbolSize:3,category:'公园'},
+{name:'上海名人苑',value:3,symbolSize:3,category:'公园'},
+{name:'古猗园',value:3,symbolSize:3,category:'公园'},
+{name:'七宝老街',value:3,symbolSize:3,category:'古镇'},
+{name:'东方绿舟',value:2,symbolSize:2,category:'公园'},
+{name:'上海博物馆',value:2,symbolSize:2,category:'展馆'},
+{name:'松江博物馆',value:2,symbolSize:2,category:'展馆'},
+{name:'上海市格致中学',value:2,symbolSize:2,category:'中学'},
+{name:'学校',value:2,symbolSize:2,category:'学校'},
+{name:'江川科学健康生活馆',value:2,symbolSize:2,category:'文化宫'},
+{name:'上海师范大学附属中学',value:2,symbolSize:2,category:'中学'},
+{name:'浦东凌空农艺大观园',value:2,symbolSize:2,category:'公园'},
+{name:'宋庆龄陵园',value:2,symbolSize:2,category:'历史遗址'},
+{name:'上海杜莎夫人蜡像馆',value:2,symbolSize:2,category:'展馆'},
+{name:'巧克力开心乐园',value:2,symbolSize:2,category:'其他'},
+{name:'曼可顿食品（上海）有限公司',value:2,symbolSize:2,category:'企业'},
+{name:'青青旅游世界',value:2,symbolSize:2,category:'公园'},
+{name:'上海海湾国家森林公园',value:2,symbolSize:2,category:'公园'},
+{name:'中共第一次全国代表大会会址',value:2,symbolSize:2,category:'历史遗址'},
+{name:'中山公园',value:2,symbolSize:2,category:'公园'},
+{name:'可口可乐上海公司',value:2,symbolSize:2,category:'企业'},
+{name:'陈云故居暨青浦革命历史纪念馆',value:2,symbolSize:2,category:'展馆'},
+{name:'华东师范大学第二附属中学',value:2,symbolSize:2,category:'中学'},
+{name:'上海地质科普馆',value:2,symbolSize:2,category:'展馆'},
+{name:'上海儿童博物馆',value:2,symbolSize:2,category:'展馆'},
+{name:'时尚主题馆',value:1,symbolSize:1,category:'展馆'},
+{name:'衣裳街',value:1,symbolSize:1,category:'其他'},
+{name:'土山湾博物馆',value:1,symbolSize:1,category:'展馆'},
+{name:'上海工艺美术博物馆',value:1,symbolSize:1,category:'展馆'},
+{name:'蓝箭培训中心',value:1,symbolSize:1,category:'其他'},
+{name:'海军上海博览馆',value:1,symbolSize:1,category:'展馆'},
+{name:'松江方塔',value:1,symbolSize:1,category:'公园'},
+{name:'常州博物馆',value:1,symbolSize:1,category:'展馆'},
+{name:'徐汇区青少年活动中心',value:1,symbolSize:1,category:'文化宫'},
+{name:'华东师范大学',value:1,symbolSize:1,category:'高校'},
+{name:'闸北体育馆',value:1,symbolSize:1,category:'体育场馆'},
+{name:'闵行区科技馆',value:1,symbolSize:1,category:'展馆'},
+{name:'上海奉贤现代农业园区',value:1,symbolSize:1,category:'园区'},
+{name:'闵行区烈士陵园',value:1,symbolSize:1,category:'陵园'},
+{name:'上海滨海森林公园',value:1,symbolSize:1,category:'公园'},
+{name:'东方明珠',value:1,symbolSize:1,category:'展馆'},
+{name:'上海磁浮列车',value:1,symbolSize:1,category:'其他'},
+{name:'上海黄浦江水文化博物园',value:1,symbolSize:1,category:'公园'},
+{name:'吴淞炮台湾湿地森林公园',value:1,symbolSize:1,category:'公园'},
+{name:'欢乐谷',value:1,symbolSize:1,category:'公园'},
+{name:'上海电影博物馆',value:1,symbolSize:1,category:'展馆'},
+{name:'上海民防科普教育馆',value:1,symbolSize:1,category:'展馆'},
+{name:'渔人码头',value:1,symbolSize:1,category:'其他'},
+{name:'浦东消防安全训练营',value:1,symbolSize:1,category:'实践基地'},
+{name:'科普馆',value:1,symbolSize:1,category:'展馆'},
+{name:'上海浦东国际机场',value:1,symbolSize:1,category:'机关'},
+{name:'中国武术博物馆',value:1,symbolSize:1,category:'展馆'},
+{name:'环球动漫嬉戏谷',value:1,symbolSize:1,category:'公园'},
+{name:'上海工业旅游促进中心',value:1,symbolSize:1,category:'机关'},
+{name:'上海申美饮料食品公司',value:1,symbolSize:1,category:'企业'},
+{name:'世博会博物馆',value:1,symbolSize:1,category:'展馆'},
+{name:'钱学森旧居',value:1,symbolSize:1,category:'故居'},
+{name:'江南三民文化村',value:1,symbolSize:1,category:'休闲度假'},
+{name:'上海世博会纪念馆',value:1,symbolSize:1,category:'展馆'},
+{name:'松江烈士陵园',value:1,symbolSize:1,category:'陵园'},
+{name:'黄道婆纪念馆',value:1,symbolSize:1,category:'展馆'},
+{name:'公园',value:1,symbolSize:1,category:'公园'},
+{name:'巧克力工场',value:1,symbolSize:1,category:'其他'},
+{name:'道路',value:1,symbolSize:1,category:'其他'},
+{name:'上海市无线电管理局',value:1,symbolSize:1,category:'机关'},
+{name:'星期8小镇',value:1,symbolSize:1,category:'其他'},
+{name:'上海市总工会沪西工人文化宫',value:1,symbolSize:1,category:'文化宫'},
+{name:'地震科普馆',value:1,symbolSize:1,category:'展馆'},
+{name:'上海孙桥现代农业开发区',value:1,symbolSize:1,category:'园区'},
+{name:'洋山深水港',value:1,symbolSize:1,category:'公园'},
+{name:'上海天文台',value:1,symbolSize:1,category:'展馆'},
+{name:'永升江南农家乐园',value:1,symbolSize:1,category:'休闲度假'},
+{name:'上海影城',value:1,symbolSize:1,category:'影剧院'},
+{name:'雨花台风景区',value:1,symbolSize:1,category:'历史遗址'},
+{name:'滨江森林公园',value:1,symbolSize:1,category:'公园'},
+{name:'张充仁纪念馆',value:1,symbolSize:1,category:'展馆'},
+{name:'侵华日军南京大屠杀遇难同胞纪念馆',value:1,symbolSize:1,category:'展馆'},
+{name:'关港消防队',value:1,symbolSize:1,category:'机关'},
+{name:'青浦博物馆',value:1,symbolSize:1,category:'展馆'},
+{name:'观光隧道',value:1,symbolSize:1,category:'其他'},
+{name:'上海周浦花海',value:1,symbolSize:1,category:'公园'},
+{name:'上海纺织服饰博物馆',value:1,symbolSize:1,category:'展馆'},
+{name:'高尔夫',value:1,symbolSize:1,category:'体育场馆'},
+{name:'钟书阁',value:1,symbolSize:1,category:'其他'},
+{name:'沙特馆',value:1,symbolSize:1,category:'展馆'},
+{name:'莘庄',value:1,symbolSize:1,category:'社区'}
+            ],
+            links: [
+{source:'2050/2500未来生活体验馆',target:'上海共青国家森林公园',weight:2},
+{source:'2050/2500未来生活体验馆',target:'上海名人苑',weight:1},
+{source:'2050/2500未来生活体验馆',target:'中山公园',weight:1},
+{source:'滨江森林公园',target:'钱学森旧居',weight:1},
+{source:'常州博物馆',target:'环球动漫嬉戏谷',weight:1},
+{source:'大宁灵石公园',target:'江湾体育场',weight:1},
+{source:'大宁灵石公园',target:'宛平剧院',weight:2},
+{source:'东方绿舟',target:'陈云故居暨青浦革命历史纪念馆',weight:2},
+{source:'高尔夫',target:'太太乐食品公司',weight:1},
+{source:'顾村公园',target:'宝山国际民间艺术博览馆',weight:4},
+{source:'顾村公园',target:'上海公安博物馆',weight:6},
+{source:'观光隧道',target:'黄兴公园',weight:1},
+{source:'海军上海博览馆',target:'吴淞炮台湾湿地森林公园',weight:1},
+{source:'和平公园',target:'上海世博会纪念馆',weight:1},
+{source:'华东师范大学',target:'世纪公园',weight:1},
+{source:'华东师范大学第二附属中学',target:'锦江乐园',weight:1},
+{source:'华东师范大学第二附属中学',target:'世纪公园',weight:1},
+{source:'欢乐谷',target:'佘山',weight:1},
+{source:'黄道婆纪念馆',target:'长风公园',weight:1},
+{source:'黄兴公园',target:'上海大自然野生昆虫馆',weight:1},
+{source:'江川科学健康生活馆',target:'上海市禁毒科普教育馆',weight:1},
+{source:'江湾体育场',target:'大宁灵石公园',weight:5},
+{source:'江湾体育场',target:'世纪公园',weight:1},
+{source:'敬老院',target:'社区',weight:1},
+{source:'可口可乐上海公司',target:'世纪公园',weight:1},
+{source:'临江公园',target:'宝山体育中心',weight:7},
+{source:'龙华烈士陵园',target:'锦江乐园',weight:4},
+{source:'龙华烈士陵园',target:'巧克力工场',weight:1},
+{source:'龙华烈士陵园',target:'上海植物园',weight:6},
+{source:'鲁迅公园',target:'东方明珠',weight:1},
+{source:'鲁迅公园',target:'上海海洋水族馆',weight:1},
+{source:'曼可顿食品（上海）有限公司',target:'上海影视乐园',weight:1},
+{source:'曼可顿食品（上海）有限公司',target:'上海月湖雕塑公园',weight:1},
+{source:'闵行区科技馆',target:'辰山植物园',weight:1},
+{source:'闵行区烈士陵园',target:'辰山植物园',weight:1},
+{source:'闵行体育公园',target:'学校',weight:1},
+{source:'浦东消防安全训练营',target:'世纪公园',weight:1},
+{source:'七宝老街',target:'闵行体育公园',weight:1},
+{source:'七宝老街',target:'张充仁纪念馆',weight:1},
+{source:'钱学森图书馆',target:'顾村公园',weight:1},
+{source:'钱学森图书馆',target:'锦江乐园',weight:2},
+{source:'钱学森图书馆',target:'上海动画博物馆',weight:1},
+{source:'钱学森图书馆',target:'世纪公园',weight:1},
+{source:'巧克力开心乐园',target:'时尚主题馆',weight:1},
+{source:'巧克力开心乐园',target:'中华艺术宫',weight:1},
+{source:'侵华日军南京大屠杀遇难同胞纪念馆',target:'雨花台风景区',weight:1},
+{source:'青浦博物馆',target:'永升江南农家乐园',weight:1},
+{source:'青青旅游世界',target:'佘山',weight:2},
+{source:'沙特馆',target:'中华艺术宫',weight:1},
+{source:'上海滨海森林公园',target:'闸北体育馆',weight:1},
+{source:'上海博物馆',target:'世纪公园',weight:1},
+{source:'上海博物馆',target:'中共第一次全国代表大会会址',weight:1},
+{source:'上海磁浮列车',target:'世纪公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'2050/2500未来生活体验馆',weight:1},
+{source:'上海大自然野生昆虫馆',target:'和平公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'黄兴公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'科普馆',weight:1},
+{source:'上海大自然野生昆虫馆',target:'鲁迅公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'上海名人苑',weight:1},
+{source:'上海大自然野生昆虫馆',target:'上海市禁毒科普教育馆',weight:1},
+{source:'上海大自然野生昆虫馆',target:'上海植物园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'世纪公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'杨浦公园',weight:1},
+{source:'上海地质科普馆',target:'浦东凌空农艺大观园',weight:2},
+{source:'上海电影博物馆',target:'世博会博物馆',weight:1},
+{source:'上海动画博物馆',target:'可口可乐上海公司',weight:1},
+{source:'上海动画博物馆',target:'上海名人苑',weight:1},
+{source:'上海动画博物馆',target:'上海申美饮料食品公司',weight:1},
+{source:'上海动画博物馆',target:'杨浦公园',weight:1},
+{source:'上海杜莎夫人蜡像馆',target:'和平公园',weight:1},
+{source:'上海杜莎夫人蜡像馆',target:'中山公园',weight:1},
+{source:'上海儿童博物馆',target:'上海动物园',weight:1},
+{source:'上海儿童博物馆',target:'长风公园',weight:1},
+{source:'上海纺织服饰博物馆',target:'上海植物园',weight:1},
+{source:'上海工艺美术博物馆',target:'和平公园',weight:1},
+{source:'上海公安博物馆',target:'长风公园',weight:1},
+{source:'上海共青国家森林公园',target:'顾村公园',weight:1},
+{source:'上海共青国家森林公园',target:'上海海洋水族馆',weight:1},
+{source:'上海共青国家森林公园',target:'上海市禁毒科普教育馆',weight:5},
+{source:'上海共青国家森林公园',target:'上海市无线电管理局',weight:1},
+{source:'上海海湾国家森林公园',target:'蓝箭培训中心',weight:1},
+{source:'上海海湾国家森林公园',target:'闵行体育公园',weight:1},
+{source:'上海海洋水族馆',target:'世纪公园',weight:4},
+{source:'上海航天博物馆',target:'锦江乐园',weight:4},
+{source:'上海航天博物馆',target:'上海植物园',weight:1},
+{source:'上海航宇科普中心',target:'锦江乐园',weight:6},
+{source:'上海航宇科普中心',target:'七宝老街',weight:1},
+{source:'上海黄浦江水文化博物园',target:'江川科学健康生活馆',weight:1},
+{source:'上海科技馆',target:'龙华烈士陵园',weight:1},
+{source:'上海科技馆',target:'上海市禁毒科普教育馆',weight:3},
+{source:'上海民防科普教育馆',target:'长风公园',weight:1},
+{source:'上海浦东国际机场',target:'世纪公园',weight:1},
+{source:'上海汽车博物馆',target:'古猗园',weight:3},
+{source:'上海汽车博物馆',target:'上海工业旅游促进中心',weight:1},
+{source:'上海汽车博物馆',target:'太太乐食品公司',weight:2},
+{source:'上海市格致中学',target:'上海师范大学附属中学',weight:2},
+{source:'上海市禁毒科普教育馆',target:'公园',weight:1},
+{source:'上海市禁毒科普教育馆',target:'江南三民文化村',weight:1},
+{source:'上海市禁毒科普教育馆',target:'锦江乐园',weight:2},
+{source:'上海市禁毒科普教育馆',target:'鲁迅公园',weight:2},
+{source:'上海市禁毒科普教育馆',target:'上海月湖雕塑公园',weight:1},
+{source:'上海市禁毒科普教育馆',target:'世纪公园',weight:5},
+{source:'上海市禁毒科普教育馆',target:'长风公园',weight:6},
+{source:'上海孙桥现代农业开发区',target:'上海市禁毒科普教育馆',weight:1},
+{source:'上海天文台',target:'上海月湖雕塑公园',weight:1},
+{source:'上海影视乐园',target:'佘山',weight:1},
+{source:'上海影视乐园',target:'莘庄',weight:1},
+{source:'上海影视乐园',target:'松江方塔',weight:1},
+{source:'上海月湖雕塑公园',target:'地震科普馆',weight:1},
+{source:'上海月湖雕塑公园',target:'佘山',weight:2},
+{source:'上海月湖雕塑公园',target:'松江博物馆',weight:1},
+{source:'上海植物园',target:'关港消防队',weight:1},
+{source:'上海植物园',target:'上海航宇科普中心',weight:1},
+{source:'佘山',target:'辰山植物园',weight:1},
+{source:'社区',target:'道路',weight:1},
+{source:'社区',target:'敬老院',weight:2},
+{source:'社区',target:'学校',weight:1},
+{source:'世纪公园',target:'上海动画博物馆',weight:1},
+{source:'松江博物馆',target:'上海影视乐园',weight:1},
+{source:'松江烈士陵园',target:'辰山植物园',weight:1},
+{source:'宋庆龄陵园',target:'上海动物园',weight:2},
+{source:'土山湾博物馆',target:'锦江乐园',weight:1},
+{source:'宛平剧院',target:'和平公园',weight:1},
+{source:'宛平剧院',target:'上海植物园',weight:1},
+{source:'星期8小镇',target:'闵行体育公园',weight:1},
+{source:'徐汇区青少年活动中心',target:'上海影城',weight:1},
+{source:'洋山深水港',target:'中国航海博物馆',weight:1},
+{source:'衣裳街',target:'渔人码头',weight:1},
+{source:'长风公园',target:'2050/2500未来生活体验馆',weight:4},
+{source:'中共第一次全国代表大会会址',target:'上海植物园',weight:1},
+{source:'中国航海博物馆',target:'上海滴水湖',weight:4},
+{source:'中国航海博物馆',target:'上海奉贤现代农业园区',weight:1},
+{source:'中国航海博物馆',target:'上海周浦花海',weight:1},
+{source:'中国农民画村',target:'枫泾古镇',weight:4},
+{source:'中国武术博物馆',target:'杨浦公园',weight:1},
+{source:'中华艺术宫',target:'上海动画博物馆',weight:1},
+{source:'中华艺术宫',target:'上海市总工会沪西工人文化宫',weight:1},
+{source:'中华艺术宫',target:'世纪公园',weight:2},
+{source:'钟书阁',target:'辰山植物园',weight:1}
+
+            ],
+                categories: [{name:'展馆'},
+{name:'公园'},
+{name:'陵园'},
+{name:'其他'},
+{name:'体育场馆'},
+{name:'图书馆'},
+{name:'影剧院'},
+{name:'休闲度假'},
+{name:'古镇'},
+{name:'企业'},
+{name:'中学'},
+{name:'学校'},
+{name:'文化宫'},
+{name:'历史遗址'},
+{name:'高校'},
+{name:'园区'},
+{name:'实践基地'},
+{name:'机关'},
+{name:'故居'},
+{name:'社区'},
+],
+                roam: true,
+                label: {
+                    normal: {
+                        position: 'top',
+                        formatter: '{b}',
+                        show: true
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        curveness: 0.3
+                    }
+                }
+            }
+        ]
+    };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+<p></p>
+<div id="main5" style="height:700px;width:100%;margin:auto;"></div>
+<span class="caption text-muted">图7 出行模式-主要模式</span>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main5'));
+
+        // 指定图表的配置项和数据
+
+    option = {
+        title: {
+            text: '社会实践出行模式',
+            subtext: '出现次数>=4',
+            top: 'bottom',
+            left: 'right'
+        },
+		height:450,
+        tooltip: {},
+        legend: {data:['展馆','公园','陵园','其他','体育场馆','图书馆',
+'影剧院','休闲度假','古镇','企业','中学','学校','文化宫','历史遗址',
+'高校','园区','实践基地','机关','故居','社区'
+]},
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series : [
+            {
+                name: '地点',
+                type: 'graph',
+                layout: 'circular',
+           nodes: [
+{name:'上海市禁毒科普教育馆',value:29,symbolSize:29,category:'展馆'},
+{name:'世纪公园',value:22,symbolSize:22,category:'公园'},
+{name:'锦江乐园',value:20,symbolSize:20,category:'公园'},
+{name:'长风公园',value:14,symbolSize:14,category:'公园'},
+{name:'上海植物园',value:13,symbolSize:13,category:'公园'},
+{name:'顾村公园',value:12,symbolSize:12,category:'公园'},
+{name:'龙华烈士陵园',value:12,symbolSize:12,category:'陵园'},
+{name:'上海大自然野生昆虫馆',value:11,symbolSize:11,category:'展馆'},
+{name:'上海共青国家森林公园',value:10,symbolSize:10,category:'公园'},
+{name:'2050/2500未来生活体验馆',value:9,symbolSize:9,category:'其他'},
+{name:'大宁灵石公园',value:8,symbolSize:8,category:'公园'},
+{name:'上海航宇科普中心',value:8,symbolSize:8,category:'展馆'},
+{name:'宝山体育中心',value:7,symbolSize:7,category:'体育场馆'},
+{name:'上海公安博物馆',value:7,symbolSize:7,category:'展馆'},
+{name:'佘山',value:7,symbolSize:7,category:'公园'},
+{name:'江湾体育场',value:7,symbolSize:7,category:'体育场馆'},
+{name:'中国航海博物馆',value:7,symbolSize:7,category:'展馆'},
+{name:'临江公园',value:7,symbolSize:7,category:'公园'},
+{name:'上海月湖雕塑公园',value:7,symbolSize:7,category:'公园'},
+{name:'上海动画博物馆',value:7,symbolSize:7,category:'展馆'},
+{name:'中华艺术宫',value:6,symbolSize:6,category:'展馆'},
+{name:'上海汽车博物馆',value:6,symbolSize:6,category:'展馆'},
+{name:'上海海洋水族馆',value:6,symbolSize:6,category:'展馆'},
+{name:'鲁迅公园',value:5,symbolSize:5,category:'公园'},
+{name:'上海影视乐园',value:5,symbolSize:5,category:'公园'},
+{name:'辰山植物园',value:5,symbolSize:5,category:'公园'},
+{name:'社区',value:5,symbolSize:5,category:'其他'},
+{name:'和平公园',value:5,symbolSize:5,category:'公园'},
+{name:'钱学森图书馆',value:5,symbolSize:5,category:'图书馆'},
+{name:'上海航天博物馆',value:5,symbolSize:5,category:'展馆'},
+{name:'宛平剧院',value:4,symbolSize:4,category:'影剧院'},
+{name:'中国农民画村',value:4,symbolSize:4,category:'休闲度假'},
+{name:'枫泾古镇',value:4,symbolSize:4,category:'古镇'},
+{name:'宝山国际民间艺术博览馆',value:4,symbolSize:4,category:'展馆'},
+{name:'闵行体育公园',value:4,symbolSize:4,category:'公园'},
+{name:'上海滴水湖',value:4,symbolSize:4,category:'公园'},
+{name:'上海科技馆',value:4,symbolSize:4,category:'展馆'},
+
+
+            ],
+            links: [
+{source:'2050/2500未来生活体验馆',target:'上海共青国家森林公园',weight:2},
+{source:'2050/2500未来生活体验馆',target:'上海名人苑',weight:1},
+{source:'2050/2500未来生活体验馆',target:'中山公园',weight:1},
+{source:'滨江森林公园',target:'钱学森旧居',weight:1},
+{source:'常州博物馆',target:'环球动漫嬉戏谷',weight:1},
+{source:'大宁灵石公园',target:'江湾体育场',weight:1},
+{source:'大宁灵石公园',target:'宛平剧院',weight:2},
+{source:'东方绿舟',target:'陈云故居暨青浦革命历史纪念馆',weight:2},
+{source:'高尔夫',target:'太太乐食品公司',weight:1},
+{source:'顾村公园',target:'宝山国际民间艺术博览馆',weight:4},
+{source:'顾村公园',target:'上海公安博物馆',weight:6},
+{source:'观光隧道',target:'黄兴公园',weight:1},
+{source:'海军上海博览馆',target:'吴淞炮台湾湿地森林公园',weight:1},
+{source:'和平公园',target:'上海世博会纪念馆',weight:1},
+{source:'华东师范大学',target:'世纪公园',weight:1},
+{source:'华东师范大学第二附属中学',target:'锦江乐园',weight:1},
+{source:'华东师范大学第二附属中学',target:'世纪公园',weight:1},
+{source:'欢乐谷',target:'佘山',weight:1},
+{source:'黄道婆纪念馆',target:'长风公园',weight:1},
+{source:'黄兴公园',target:'上海大自然野生昆虫馆',weight:1},
+{source:'江川科学健康生活馆',target:'上海市禁毒科普教育馆',weight:1},
+{source:'江湾体育场',target:'大宁灵石公园',weight:5},
+{source:'江湾体育场',target:'世纪公园',weight:1},
+{source:'敬老院',target:'社区',weight:1},
+{source:'可口可乐上海公司',target:'世纪公园',weight:1},
+{source:'临江公园',target:'宝山体育中心',weight:7},
+{source:'龙华烈士陵园',target:'锦江乐园',weight:4},
+{source:'龙华烈士陵园',target:'巧克力工场',weight:1},
+{source:'龙华烈士陵园',target:'上海植物园',weight:6},
+{source:'鲁迅公园',target:'东方明珠',weight:1},
+{source:'鲁迅公园',target:'上海海洋水族馆',weight:1},
+{source:'曼可顿食品（上海）有限公司',target:'上海影视乐园',weight:1},
+{source:'曼可顿食品（上海）有限公司',target:'上海月湖雕塑公园',weight:1},
+{source:'闵行区科技馆',target:'辰山植物园',weight:1},
+{source:'闵行区烈士陵园',target:'辰山植物园',weight:1},
+{source:'闵行体育公园',target:'学校',weight:1},
+{source:'浦东消防安全训练营',target:'世纪公园',weight:1},
+{source:'七宝老街',target:'闵行体育公园',weight:1},
+{source:'七宝老街',target:'张充仁纪念馆',weight:1},
+{source:'钱学森图书馆',target:'顾村公园',weight:1},
+{source:'钱学森图书馆',target:'锦江乐园',weight:2},
+{source:'钱学森图书馆',target:'上海动画博物馆',weight:1},
+{source:'钱学森图书馆',target:'世纪公园',weight:1},
+{source:'巧克力开心乐园',target:'时尚主题馆',weight:1},
+{source:'巧克力开心乐园',target:'中华艺术宫',weight:1},
+{source:'侵华日军南京大屠杀遇难同胞纪念馆',target:'雨花台风景区',weight:1},
+{source:'青浦博物馆',target:'永升江南农家乐园',weight:1},
+{source:'青青旅游世界',target:'佘山',weight:2},
+{source:'沙特馆',target:'中华艺术宫',weight:1},
+{source:'上海滨海森林公园',target:'闸北体育馆',weight:1},
+{source:'上海博物馆',target:'世纪公园',weight:1},
+{source:'上海博物馆',target:'中共第一次全国代表大会会址',weight:1},
+{source:'上海磁浮列车',target:'世纪公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'2050/2500未来生活体验馆',weight:1},
+{source:'上海大自然野生昆虫馆',target:'和平公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'黄兴公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'科普馆',weight:1},
+{source:'上海大自然野生昆虫馆',target:'鲁迅公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'上海名人苑',weight:1},
+{source:'上海大自然野生昆虫馆',target:'上海市禁毒科普教育馆',weight:1},
+{source:'上海大自然野生昆虫馆',target:'上海植物园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'世纪公园',weight:1},
+{source:'上海大自然野生昆虫馆',target:'杨浦公园',weight:1},
+{source:'上海地质科普馆',target:'浦东凌空农艺大观园',weight:2},
+{source:'上海电影博物馆',target:'世博会博物馆',weight:1},
+{source:'上海动画博物馆',target:'可口可乐上海公司',weight:1},
+{source:'上海动画博物馆',target:'上海名人苑',weight:1},
+{source:'上海动画博物馆',target:'上海申美饮料食品公司',weight:1},
+{source:'上海动画博物馆',target:'杨浦公园',weight:1},
+{source:'上海杜莎夫人蜡像馆',target:'和平公园',weight:1},
+{source:'上海杜莎夫人蜡像馆',target:'中山公园',weight:1},
+{source:'上海儿童博物馆',target:'上海动物园',weight:1},
+{source:'上海儿童博物馆',target:'长风公园',weight:1},
+{source:'上海纺织服饰博物馆',target:'上海植物园',weight:1},
+{source:'上海工艺美术博物馆',target:'和平公园',weight:1},
+{source:'上海公安博物馆',target:'长风公园',weight:1},
+{source:'上海共青国家森林公园',target:'顾村公园',weight:1},
+{source:'上海共青国家森林公园',target:'上海海洋水族馆',weight:1},
+{source:'上海共青国家森林公园',target:'上海市禁毒科普教育馆',weight:5},
+{source:'上海共青国家森林公园',target:'上海市无线电管理局',weight:1},
+{source:'上海海湾国家森林公园',target:'蓝箭培训中心',weight:1},
+{source:'上海海湾国家森林公园',target:'闵行体育公园',weight:1},
+{source:'上海海洋水族馆',target:'世纪公园',weight:4},
+{source:'上海航天博物馆',target:'锦江乐园',weight:4},
+{source:'上海航天博物馆',target:'上海植物园',weight:1},
+{source:'上海航宇科普中心',target:'锦江乐园',weight:6},
+{source:'上海航宇科普中心',target:'七宝老街',weight:1},
+{source:'上海黄浦江水文化博物园',target:'江川科学健康生活馆',weight:1},
+{source:'上海科技馆',target:'龙华烈士陵园',weight:1},
+{source:'上海科技馆',target:'上海市禁毒科普教育馆',weight:3},
+{source:'上海民防科普教育馆',target:'长风公园',weight:1},
+{source:'上海浦东国际机场',target:'世纪公园',weight:1},
+{source:'上海汽车博物馆',target:'古猗园',weight:3},
+{source:'上海汽车博物馆',target:'上海工业旅游促进中心',weight:1},
+{source:'上海汽车博物馆',target:'太太乐食品公司',weight:2},
+{source:'上海市格致中学',target:'上海师范大学附属中学',weight:2},
+{source:'上海市禁毒科普教育馆',target:'公园',weight:1},
+{source:'上海市禁毒科普教育馆',target:'江南三民文化村',weight:1},
+{source:'上海市禁毒科普教育馆',target:'锦江乐园',weight:2},
+{source:'上海市禁毒科普教育馆',target:'鲁迅公园',weight:2},
+{source:'上海市禁毒科普教育馆',target:'上海月湖雕塑公园',weight:1},
+{source:'上海市禁毒科普教育馆',target:'世纪公园',weight:5},
+{source:'上海市禁毒科普教育馆',target:'长风公园',weight:6},
+{source:'上海孙桥现代农业开发区',target:'上海市禁毒科普教育馆',weight:1},
+{source:'上海天文台',target:'上海月湖雕塑公园',weight:1},
+{source:'上海影视乐园',target:'佘山',weight:1},
+{source:'上海影视乐园',target:'莘庄',weight:1},
+{source:'上海影视乐园',target:'松江方塔',weight:1},
+{source:'上海月湖雕塑公园',target:'地震科普馆',weight:1},
+{source:'上海月湖雕塑公园',target:'佘山',weight:2},
+{source:'上海月湖雕塑公园',target:'松江博物馆',weight:1},
+{source:'上海植物园',target:'关港消防队',weight:1},
+{source:'上海植物园',target:'上海航宇科普中心',weight:1},
+{source:'佘山',target:'辰山植物园',weight:1},
+{source:'社区',target:'道路',weight:1},
+{source:'社区',target:'敬老院',weight:2},
+{source:'社区',target:'学校',weight:1},
+{source:'世纪公园',target:'上海动画博物馆',weight:1},
+{source:'松江博物馆',target:'上海影视乐园',weight:1},
+{source:'松江烈士陵园',target:'辰山植物园',weight:1},
+{source:'宋庆龄陵园',target:'上海动物园',weight:2},
+{source:'土山湾博物馆',target:'锦江乐园',weight:1},
+{source:'宛平剧院',target:'和平公园',weight:1},
+{source:'宛平剧院',target:'上海植物园',weight:1},
+{source:'星期8小镇',target:'闵行体育公园',weight:1},
+{source:'徐汇区青少年活动中心',target:'上海影城',weight:1},
+{source:'洋山深水港',target:'中国航海博物馆',weight:1},
+{source:'衣裳街',target:'渔人码头',weight:1},
+{source:'长风公园',target:'2050/2500未来生活体验馆',weight:4},
+{source:'中共第一次全国代表大会会址',target:'上海植物园',weight:1},
+{source:'中国航海博物馆',target:'上海滴水湖',weight:4},
+{source:'中国航海博物馆',target:'上海奉贤现代农业园区',weight:1},
+{source:'中国航海博物馆',target:'上海周浦花海',weight:1},
+{source:'中国农民画村',target:'枫泾古镇',weight:4},
+{source:'中国武术博物馆',target:'杨浦公园',weight:1},
+{source:'中华艺术宫',target:'上海动画博物馆',weight:1},
+{source:'中华艺术宫',target:'上海市总工会沪西工人文化宫',weight:1},
+{source:'中华艺术宫',target:'世纪公园',weight:2},
+{source:'钟书阁',target:'辰山植物园',weight:1}
+
+            ],
+                categories: [{name:'展馆'},
+{name:'公园'},
+{name:'陵园'},
+{name:'其他'},
+{name:'体育场馆'},
+{name:'图书馆'},
+{name:'影剧院'},
+{name:'休闲度假'},
+{name:'古镇'},
+{name:'企业'},
+{name:'中学'},
+{name:'学校'},
+{name:'文化宫'},
+{name:'历史遗址'},
+{name:'高校'},
+{name:'园区'},
+{name:'实践基地'},
+{name:'机关'},
+{name:'故居'},
+{name:'社区'},
+],
+                roam: true,
+                label: {
+                    normal: {
+                        position: 'top',
+                        formatter: '{b}',
+                        show: true
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        curveness: 0.3
+                    }
+                }
+            }
+        ]
+    };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+<p><img src="img/chord.png" class="position"></img></p>
+<span class="caption text-muted">图8 出行模式-按类别</span>
+<p></p>
+	
+<h2 class="section-heading">5.彩蛋：推荐的出行地</h2>
+<p></p>
+<table id = "customers">
+ <thead>
+    <tr>
+      <th>景点</th>
+      <th>评价分</th>
+      <th>评论数</th>
+    </tr>
+  </thead> 
+  <tbody>
+<tr><td>ERA-时空之旅</td><td>4.5</td><td>30</td></tr>
+<tr><td>江海关</td><td>4.4</td><td>44</td></tr>
+<tr><td>上海戏剧学院</td><td>4.4</td><td>20</td></tr>
+<tr><td>上海浦东发展银行大楼</td><td>4.4</td><td>19</td></tr>
+<tr><td>横沙岛(Hengsha Island)</td><td>4.4</td><td>17</td></tr>
+<tr><td>上海音乐学院</td><td>4.4</td><td>17</td></tr>
+<tr><td>上海当代艺术博物馆(Power Station Of Art)</td><td>4.3</td><td>47</td></tr>
+<tr><td>广富林遗址</td><td>4.3</td><td>47</td></tr>
+<tr><td>上海邮政博物馆</td><td>4.3</td><td>45</td></tr>
+<tr><td>圆明园路</td><td>4.3</td><td>43</td></tr>
+<tr><td>金泽古镇</td><td>4.3</td><td>39</td></tr>
+<tr><td>丁香花园(Lilac Garden)</td><td>4.3</td><td>34</td></tr>
+<tr><td>上海琉璃艺术博物馆</td><td>4.3</td><td>27</td></tr>
+<tr><td>上海市文化广场</td><td>4.3</td><td>19</td></tr>
+<tr><td>汇中饭店大楼</td><td>4.3</td><td>17</td></tr>
+<tr><td>韩湘水博园</td><td>4.3</td><td>16</td></tr>
+<tr><td>上海历史博物馆</td><td>4.2</td><td>36</td></tr>
+<tr><td>巴金故居</td><td>4.1</td><td>49</td></tr>
+<tr><td>静安雕塑公园</td><td>4.1</td><td>48</td></tr>
+<tr><td>东海大桥</td><td>4.1</td><td>32</td></tr>
+<tr><td>方塔公园</td><td>4.1</td><td>30</td></tr>
+<tr><td>崇明学宫</td><td>4.1</td><td>29</td></tr>
+<tr><td>上海外国语大学(Shanghai International Studies University)</td><td>4.1</td><td>27</td></tr>
+<tr><td>上海新国际博览中心(SNIEC)</td><td>4.1</td><td>25</td></tr>
+<tr><td>奉贤菜花节</td><td>4.1</td><td>25</td></tr>
+<tr><td>上海图书馆徐家汇藏书楼</td><td>4.1</td><td>24</td></tr>
+<tr><td>嘉定孔庙</td><td>4.1</td><td>21</td></tr>
+<tr><td>华东政法大学(松江校区)(East China University of Political Science and Law)</td><td>4.1</td><td>19</td></tr>
+<tr><td>世纪广场</td><td>4.1</td><td>18</td></tr>
+<tr><td>外滩情人墙</td><td>4.1</td><td>17</td></tr>
+<tr><td>世博轴</td><td>4.1</td><td>16</td></tr>
+<tr><td>M50半岛文化创意园区</td><td>4.1</td><td>16</td></tr>
+<tr><td>蔡元培故居</td><td>4.1</td><td>15</td></tr>
+<tr><td>金山滨海公园</td><td>4.1</td><td>15</td></tr>
+<tr><td>上海长江大桥(Shanghai Yangtze River Tunnel Bridge)</td><td>4.1</td><td>15</td></tr>
+<tr><td>交通银行大楼</td><td>4</td><td>46</td></tr>
+<tr><td>上海孙中山故居纪念馆</td><td>4</td><td>43</td></tr>
+<tr><td>陆家嘴中心绿地</td><td>4</td><td>43</td></tr>
+<tr><td>延中绿地</td><td>4</td><td>42</td></tr>
+<tr><td>上海师范大学(Shanghai Normal University)</td><td>4</td><td>41</td></tr>
+<tr><td>赵屯</td><td>4</td><td>40</td></tr>
+<tr><td>上海红坊国际文化艺术社区</td><td>4</td><td>39</td></tr>
+<tr><td>八号桥创意园区</td><td>4</td><td>35</td></tr>
+<tr><td>有利大楼</td><td>4</td><td>30</td></tr>
+<tr><td>南汇嘴观海公园</td><td>4</td><td>25</td></tr>
+<tr><td>州桥老街</td><td>4</td><td>24</td></tr>
+<tr><td>上海外滩气象信号台</td><td>4</td><td>24</td></tr>
+<tr><td>上海东海影视乐园</td><td>4</td><td>18</td></tr>
+<tr><td>复旦大学江湾校区</td><td>4</td><td>17</td></tr>
+<tr><td>金鳌山公园</td><td>4</td><td>16</td></tr>
+<tr><td>曲水园</td><td>4</td><td>16</td></tr>
+<tr><td>古华公园</td><td>4</td><td>15</td></tr>
+
+  </tbody>
+</table>
+	
+	
+<h2 class="section-heading">THANK U！</h2>
+ <br/>
+
+<!-- <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p> -->
+
+
+                <hr>
+
+
+
+            </div>
+			
+        </div>
+		
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!--                 <ul class="list-inline text-center">
+                    <li>
+                        <a href="feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/xyf2015">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul> -->
+                <p class="copyright text-muted">Copyright &copy; Psylife 2015</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/clean-blog.min.js "></script>
+
+
+
+
+</body>
+
+</html>
