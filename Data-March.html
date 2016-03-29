@@ -159,6 +159,8 @@ color: rgba(149, 149, 149, 0.8);}
 color: rgba(80, 80, 80, 0.8);
 padding: 20px;
 }*/
+
+
   </style>
 <script src="js/echarts3.0.js "></script>
 <script src="js/shanghai.js"></script>
@@ -246,7 +248,12 @@ padding: 20px;
 
 <p></p>
 
-<div id="main1" style="height:600px;width:100%;margin:auto;"></div>
+<div id="main1" class="echarts"></div>
+<style>
+.echarts {height:600px;width:100%;margin:auto;}
+ @media only screen and (max-width: 768px) {.echarts {height:400px;}}
+</style>
+
 <span class="caption text-muted">图1 社会实践旅游地图</span>
 
 <script type="text/javascript">
@@ -1446,7 +1453,7 @@ option = {
 <p></p>
 
 
-<div id="main6" style="height:600px;width:100%;margin:auto;"></div>
+<div id="main6" style="height:600%;width:100%;margin:auto;"></div>
 <span class="caption text-muted">图1-1 各类社会实践占比</span>
 
 <script type="text/javascript">
@@ -1459,10 +1466,12 @@ option = {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
     },
+	title:{text:'各类社会实践占比',x:'center'},
     legend: {
-        orient: 'vertical',
-        x: 'right',
-        y:'center',
+        /*orient: 'vertical',*/
+        x: 'center',
+        y:'top',
+		top:50,
         data:['展馆',
 '公园',
 '其他',
@@ -1493,7 +1502,7 @@ option = {
             name:'实践地点类型',
             type:'pie',
             radius: ['50%', '70%'],
-            center: ['40%', '50%'],
+            center: ['50%', '60%'],
             avoidLabelOverlap: false,
             label: {
                 normal: {
@@ -1556,7 +1565,7 @@ option = {
 
 <h2 class="section-heading">2.“热门”景点</h2>
 
-<div id="main2" style="height:600px;width:100%;margin:auto;"></div>
+<div id="main2" style="height:600%;width:100%;margin:auto;"></div>
 <span class="caption text-muted">图3 热门旅游景点</span>
 
 <script type="text/javascript">
@@ -1647,7 +1656,7 @@ option = {
 
 <p>可以分类再看看。</p>
 
-<div id="main7" style="height:600px;width:100%;margin:auto;"></div>
+<div id="main7" style="height:600%;width:100%;margin:auto;"></div>
 <span class="caption text-muted">图4 学校与各类社会实践一览</span>
 
 <script type="text/javascript">
@@ -1799,7 +1808,7 @@ option = {
 <p></p>
 
 
-<div id="main3" style="height:900px;width:100%;margin:auto;"></div>
+<div id="main3" style="height:700%;width:100%;margin:auto;"></div>
 <span class="caption text-muted">图5 热门旅游景点对比</span>
 
 <script type="text/javascript">
@@ -1816,10 +1825,10 @@ option = {
         }
     },
     grid: [
-        {x: '15%', y: '7%', width: '30%', height: '38%'},
-        {x2: '7%', y: '7%', width: '30%', height: '38%'},
-        {x: '15%', y2: '7%', width: '30%', height: '38%'},
-        {x2: '7%', y2: '7%', width: '30%', height: '38%'}
+        {x: '25%', y: '7%', width: '22%', height: '38%'},
+        {x2: '5%', y: '7%', width: '22%', height: '38%'},
+        {x: '25%', y2: '7%', width: '22%', height: '38%'},
+        {x2: '5%', y2: '7%', width: '22%', height: '38%'}
     ],
     xAxis: [{gridIndex: 0,type: 'value',boundaryGap: [0, 0.01]},
             {gridIndex: 1,type: 'value',boundaryGap: [0, 0.01]},
@@ -1855,7 +1864,7 @@ option = {
             {gridIndex: 2,ttype: 'category',data: ['上海欢乐谷',
 '上海环球金融中心',
 '新天地',
-'中华艺术宫(China Art Museum)',
+'中华艺术宫',
 '陆家嘴',
 '黄浦江',
 '江海关',
@@ -1870,12 +1879,12 @@ option = {
 ]},
             {gridIndex: 3,ttype: 'category',data: ['上海环球金融中心',
 '朱家角古镇',
-'七宝老街(七宝镇步行街)',
+'七宝老街',
 '上海博物馆',
 '外滩万国建筑博览群',
 '新天地',
 '上海杜莎夫人蜡像馆',
-'中华艺术宫(China Art Museum)',
+'中华艺术宫',
 '外白渡桥',
 '陆家嘴',
 '豫园',
@@ -1983,7 +1992,7 @@ option = {
 
 <h2 class="section-heading">3.为景点正名</h2>
 <p></p>
- <p><a href="http://naotu.baidu.com/file/5ddaed875a68d8eb26745e4f96343f67?token=448a4a7b3be9ceab" target="_blank">点我</a></p>
+ <p><a href="http://naotu.baidu.com/file/5ddaed875a68d8eb26745e4f96343f67?token=448a4a7b3be9ceab" target="_blank">点我，有跳转</a></p>
 <p><img src="img/demo.png" class="position"></img></p>
 <span class="caption text-muted">图5 常见错误示意图</span>
 <p></p>
@@ -1992,7 +2001,7 @@ option = {
 <h2 class="section-heading">4.学校出行模式</h2>
 
 <p></p>
-<div id="main4" style="height:700px;width:100%;margin:auto;"></div>
+<div id="main4" style="height:600%;width:100%;margin:auto;"></div>
 <span class="caption text-muted">图6 出行模式</span>
 
 <script type="text/javascript">
@@ -2008,7 +2017,6 @@ option = {
             top: 'bottom',
             left: 'right'
         },
-		height:450,
         tooltip: {},
         legend: {data:['展馆','公园','陵园','其他','体育场馆','图书馆',
 '影剧院','休闲度假','古镇','企业','中学','学校','文化宫','历史遗址',
@@ -2336,7 +2344,7 @@ option = {
     </script>
 
 <p></p>
-<div id="main5" style="height:700px;width:100%;margin:auto;"></div>
+<div id="main5" style="height:600%;width:100%;margin:auto;"></div>
 <span class="caption text-muted">图7 出行模式-主要模式</span>
 
 <script type="text/javascript">
@@ -2352,7 +2360,6 @@ option = {
             top: 'bottom',
             left: 'right'
         },
-		height:450,
         tooltip: {},
         legend: {data:['展馆','公园','陵园','其他','体育场馆','图书馆',
 '影剧院','休闲度假','古镇','企业','中学','学校','文化宫','历史遗址',
@@ -2610,9 +2617,9 @@ option = {
 <tr><td>江海关</td><td>4.4</td><td>44</td></tr>
 <tr><td>上海戏剧学院</td><td>4.4</td><td>20</td></tr>
 <tr><td>上海浦东发展银行大楼</td><td>4.4</td><td>19</td></tr>
-<tr><td>横沙岛(Hengsha Island)</td><td>4.4</td><td>17</td></tr>
+<tr><td>横沙岛</td><td>4.4</td><td>17</td></tr>
 <tr><td>上海音乐学院</td><td>4.4</td><td>17</td></tr>
-<tr><td>上海当代艺术博物馆(Power Station Of Art)</td><td>4.3</td><td>47</td></tr>
+<tr><td>上海当代艺术博物馆</td><td>4.3</td><td>47</td></tr>
 <tr><td>广富林遗址</td><td>4.3</td><td>47</td></tr>
 <tr><td>上海邮政博物馆</td><td>4.3</td><td>45</td></tr>
 <tr><td>圆明园路</td><td>4.3</td><td>43</td></tr>
@@ -2628,24 +2635,24 @@ option = {
 <tr><td>东海大桥</td><td>4.1</td><td>32</td></tr>
 <tr><td>方塔公园</td><td>4.1</td><td>30</td></tr>
 <tr><td>崇明学宫</td><td>4.1</td><td>29</td></tr>
-<tr><td>上海外国语大学(Shanghai International Studies University)</td><td>4.1</td><td>27</td></tr>
-<tr><td>上海新国际博览中心(SNIEC)</td><td>4.1</td><td>25</td></tr>
+<tr><td>上海外国语大学</td><td>4.1</td><td>27</td></tr>
+<tr><td>上海新国际博览中心</td><td>4.1</td><td>25</td></tr>
 <tr><td>奉贤菜花节</td><td>4.1</td><td>25</td></tr>
 <tr><td>上海图书馆徐家汇藏书楼</td><td>4.1</td><td>24</td></tr>
 <tr><td>嘉定孔庙</td><td>4.1</td><td>21</td></tr>
-<tr><td>华东政法大学(松江校区)(East China University of Political Science and Law)</td><td>4.1</td><td>19</td></tr>
+<tr><td>华东政法大学(松江校区)</td><td>4.1</td><td>19</td></tr>
 <tr><td>世纪广场</td><td>4.1</td><td>18</td></tr>
 <tr><td>外滩情人墙</td><td>4.1</td><td>17</td></tr>
 <tr><td>世博轴</td><td>4.1</td><td>16</td></tr>
 <tr><td>M50半岛文化创意园区</td><td>4.1</td><td>16</td></tr>
 <tr><td>蔡元培故居</td><td>4.1</td><td>15</td></tr>
 <tr><td>金山滨海公园</td><td>4.1</td><td>15</td></tr>
-<tr><td>上海长江大桥(Shanghai Yangtze River Tunnel Bridge)</td><td>4.1</td><td>15</td></tr>
+<tr><td>上海长江大桥</td><td>4.1</td><td>15</td></tr>
 <tr><td>交通银行大楼</td><td>4</td><td>46</td></tr>
 <tr><td>上海孙中山故居纪念馆</td><td>4</td><td>43</td></tr>
 <tr><td>陆家嘴中心绿地</td><td>4</td><td>43</td></tr>
 <tr><td>延中绿地</td><td>4</td><td>42</td></tr>
-<tr><td>上海师范大学(Shanghai Normal University)</td><td>4</td><td>41</td></tr>
+<tr><td>上海师范大学</td><td>4</td><td>41</td></tr>
 <tr><td>赵屯</td><td>4</td><td>40</td></tr>
 <tr><td>上海红坊国际文化艺术社区</td><td>4</td><td>39</td></tr>
 <tr><td>八号桥创意园区</td><td>4</td><td>35</td></tr>
@@ -2680,7 +2687,7 @@ option = {
     </div>
 </article>
 
-<hr>
+
 
 
     <!-- Footer -->
