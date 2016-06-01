@@ -2,11 +2,8 @@
 <html lang="zh-CN"> 
 <head>
 	<meta charset="utf-8">
-	<title>ggplot2绘制常见基本图形 | BruceZhao's Blog</title>
-	
+	<title>ggplot2绘制常见基本图形 | PsyLife Data Team </title>
 	<meta name="description" content="使用ggplot2绘制常见基本图形，附有代码与调整参数。">
-	
-	<meta name="author" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- Enable responsive viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +12,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico">	
 	<!-- Le styles -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/syntax.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 </head>
@@ -88,11 +85,8 @@
 		<div class="row">
 
 		<!-- Post Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-				
+    		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
     			<h2 class="no_toc" id="section">目录</h2>
 
 <ul id="markdown-toc">
@@ -111,19 +105,19 @@
   </li>
   <li><a href="#section-10" id="markdown-toc-section-10">分面图</a>    <ul>
       <li><a href="#section-11" id="markdown-toc-section-11">分面条形图</a></li>
+	  <li><a href="#section-12" id="markdown-toc-section-12">分面散点+拟合线</a></li>
+	  <li><a href="#section-13" id="markdown-toc-section-13">分面折线图</a></li>
     </ul>
   </li>
-  <li><a href="#section-12" id="markdown-toc-section-12">分面散点+拟合线</a></li>
-  <li><a href="#section-13" id="markdown-toc-section-13">分面折线图</a></li>
   <li><a href="#section-14" id="markdown-toc-section-14">滑珠图</a></li>
   <li><a href="#section-15" id="markdown-toc-section-15">二维密度图</a></li>
 </ul>
 
-<p>关于更多的资料请见ggplot2官方文档 <a href="http://docs.ggplot2.org/current/"></a></p>
+<p>基于<code>ggplot2-2.1.0</code>,不定期补充更新，更多的资料请见 <a href="http://docs.ggplot2.org/current/">ggplot2官方文档</a>。</p>
 
 <h2 id="section-1">占比饼图</h2>
 
-<p>有没有发现ggplot2里面没有直接画饼图的函数，这需要做一些小改变：将柱状图的笛卡尔坐标系变为极坐标。下面来简单介绍一下画法。</p>
+<p>不知道大家有没有发现ggplot2里面没有直接画饼图的函数，这需要做一些小改变：将柱状图的笛卡尔坐标系变为极坐标。下面来简单介绍一下画法。</p>
 <p><strong>数据要求:</strong></p>
 <pre class="r"><code>print(xueli_zb_plot)
 #&gt; Source: local data frame [5 x 3]
@@ -502,52 +496,30 @@ print(cdat)
   theme(text=element_text(family = &quot;myfont&quot;),
         title=element_text(family = &quot;myfont&quot;,face=&quot;bold&quot;))</code></pre>
 <p><img src="data:image/png;base64,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" alt="" /><!-- --></p>
-<p>&lt;/div&gt;</p>
 
+
+<hr>
+<h2>Thank You For Reading!</h2>
+
+<hr>
 
             </div>
-    </div>
-
         </div>
     </div>
 </article>
 
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options.placement = 'left';
-        anchors.add('h2,h3');
-		anchors.remove('.subheading');
-    })
-</script>
-
-
-<!-- mathjax -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-<!-- for R highlight -->
-<script type="text/javascript" src="js/r-highlight.js"></script>
-
     <!-- Footer -->
+<style type="text/css">
+    footer {
+        font-size: 20px;
+    padding: 0px 0 50px;
+    }
+    footer .copyright {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    }
+</style>
 <footer>
     <div class="container">
         <div class="row">
@@ -580,6 +552,43 @@ print(cdat)
     </div>
 </footer>
 
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options.placement = 'left';
+        anchors.add('h2,h3');
+		anchors.remove('.subheading');
+    })
+</script>
+
+<!-- mathjax -->
+<!-- <script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script> -->
+
+<!-- for R highlight -->
+<script type="text/javascript" src="js/r-highlight.js"></script>
+
+
+
 <!-- jQuery -->
 <script src="js/jquery.min.js "></script>
 
@@ -589,11 +598,28 @@ print(cdat)
 <!-- Custom Theme JavaScript -->
 <script src="js/clean-blog.min.js "></script>
 
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
 
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);  
+    })
+</script>
 
 <!-- back-to-top -->
 <div id="back-top">
-  <a href="#section" data-toggle="tooltip" data-placement="top" title="top">
+  <a href="#section" title="top">
 	<i class="fa fa-chevron-up"></i>
   </a>
 </div>
@@ -616,6 +642,6 @@ print(cdat)
   });
 });
 </script>
-	
+
 </body>
 </html>
